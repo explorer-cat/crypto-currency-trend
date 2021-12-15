@@ -1,0 +1,39 @@
+:root {
+    /*클로바인*/
+
+
+    --border-color: #d2d2d2;
+    --color-light-gray-active: #f6f6f6;
+    --ice-blue-btn-active: #cce8ff;
+    --thead-color: #eeeeee;
+    --color-bright-gray: #f1f1f1;
+    --color-list-gray: #f3f3f3;
+    --background-color: #f9f9f9;
+    --color-white: #ffffff;
+    --opacity_back: rgba(10, 10, 10, 0.35);
+    --point-font: #6849e2;
+    --clovine: #7a53d9;
+    --clovine-point: #ebebfc;
+    --point-blue: #006fff;
+    --point-blue-ligth: #E5F3FF;
+    --point-red-deep: #fa0000;
+    --point-red: #f73e50;
+    --point-red-light: #ffebeb;
+    --point-green: #40D240;
+    --task-green: #A3DE48;
+    --task-red: #F73E50;
+    --task-yellow: #F6C114;
+    --task-gray: #a8a8a8;
+
+    /*클렌디*/
+    --basic-background: #192039;
+    --basic-font-color : #8391a2;
+    --background-font-color : #313a46;
+    --color-basic: #222222;
+    --color-gray: #575757;
+    --color-light-gray:#98a6ad;
+    --color-body-gray :#6c757d;
+    --color-up-green:#0acf97;
+    --body-background :#fafbfe;
+
+}

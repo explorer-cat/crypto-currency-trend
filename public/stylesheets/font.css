@@ -1,0 +1,112 @@
+
+:root {
+
+    --default_font_family : "NotoSans-Regular";
+    --default_font_Thin : "Noto_Sans_KR_Thin";
+    --default_font_Light : "Noto_Sans_KR_Light";
+    --default_font_Medium : "Noto_Sans_KR_Medium";
+    --default_font_Bold : "Noto_Sans_KR_Bold";
+    --default_font_Black : "Noto_Sans_KR_Black";
+
+    --report_title-font: normal normal 24px var(--default_font_family) !important;
+    --report_title-font-bold: normal bold 24px var(--default_font_family) !important;
+    --title-font-bold: normal bold 18px var(--default_font_family) !important;
+    --title-font: normal normal 18px var(--default_font_family) !important;
+    --modal_title-font: normal normal 16px var(--default_font_family) !important;
+    --modal_title-font-bold: normal bold 16px var(--default_font_family) !important;
+    --font-20n: normal normal 20px var(--default_font_family) !important;
+    --font-20b: normal bold 20px var(--default_font_family) !important;
+    --font-16n: normal normal 16px var(--default_font_family) !important;
+    --font-16b: normal bold 16px var(--default_font_family) !important;
+    --font-14n: normal normal 14px var(--default_font_family) !important;
+    --font-14b: normal bold 14px var(--default_font_family) !important;
+    --font-12n: normal normal 12px var(--default_font_family) !important;
+    --font-12b: normal bold 12px var(--default_font_family) !important;
+    --font-9n: normal normal 9px var(--default_font_family) !important;
+    --font-9b: normal bold 9px var(--default_font_family) !important;
+
+    --font-color-b: #222222;
+    --font-color-w: #ffffff;
+
+}
+
+.font-30n {
+    font: normal normal 30px var(--default_font_family);
+}
+
+.font-30b {
+    font: normal bold 30px var(--default_font_family);
+}
+
+
+
+.font-24n {
+    font: normal normal 24px var(--default_font_family);
+}
+
+.font-24b {
+    font: normal bold 24px var(--default_font_family);
+}
+
+
+.font-20n {
+    font: normal normal 20px var(--default_font_family);
+}
+
+.font-20b {
+    font: normal bold 20px var(--default_font_family);
+}
+
+
+
+.font-16n {
+    font: normal normal 16px var(--default_font_family);
+}
+
+.font-16b {
+    font: normal bold 16px var(--default_font_family);
+}
+
+.font-20b {
+    font: normal bold 20px var(--default_font_family);
+}
+
+.font-20n {
+    font: normal normal 20px var(--default_font_family);
+}
+
+.font-14n {
+    font: normal normal 14px var(--default_font_family);
+}
+
+.font-14b {
+    font: normal bold 14px var(--default_font_family);
+}
+
+.font-12n {
+    font: normal normal 12px var(--default_font_family);
+}
+
+.font-12b {
+    font: normal bold 12px var(--default_font_family);
+}
+
+.font-9n {
+    font: normal normal 9px var(--default_font_family);
+}
+
+.font-9b {
+    font: normal bold 9px var(--default_font_family);
+}
+
+.font-color-b {
+    color: var(--color-basic);
+}
+
+.font-color-w {
+    color: var(--color-white);
+}
+
+.font-color-g {
+    color: var(--color-gray);
+}

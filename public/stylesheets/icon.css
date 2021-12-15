@@ -1,0 +1,56 @@
+
+.main_logo {
+    width: 28px !important;
+    height: 28px !important;
+    content: url("../../images/clendy_logo.png");
+}
+
+.clovine_trend_icon {
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/clovine_trend_menu_icon.png");
+}
+
+.clovine_license_icon {
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/clovine_license_menu_icon.png");
+}
+
+.youtube_icon {
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/youtube_icon.png");
+}
+
+.instargram_icon {
+    width: 28px !important;
+    height: 28px !important;
+    content: url("../../images/clovine_license_menu_icon.png");
+}
+
+.fold_category_icon{
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/arrow-down-hover.png");
+}
+
+
+.networks_icon{
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/networks_icon.png");
+}
+
+.schedule_icon{
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/schedule_icon.png");
+}
+
+.analytics_icon{
+    width: 24px !important;
+    height: 24px !important;
+    content: url("../../images/analytics_icon.png");
+}
+

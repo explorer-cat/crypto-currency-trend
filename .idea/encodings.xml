@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/public/font/NotoSansKR" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/font/Noto_Sans" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/font/noto-sans-kr-medium" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/font/noto-sans-kr-v12" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/images/arrow-down-hover.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/images/arrow-down-right.png" charset="x-windows-949" />
+  </component>
+</project>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <!-- 공통 css -->
+    <link rel='stylesheet' href='/stylesheets/blank.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/init.css' />
+    <link rel='stylesheet' href='/stylesheets/font.css' />
+    <link rel='stylesheet' href='/stylesheets/palette.css' />
+    <link rel='stylesheet' href='/stylesheets/icon.css' />
+    <link rel='stylesheet' href='/stylesheets/public.css' />
+
+    <!-- Side Bar Css -->
+    <link rel='stylesheet' href='/stylesheets/aside/aside.css' />
+    <link rel='stylesheet' href='/stylesheets/topbar/topbar.css' />
+    <link rel='stylesheet' href='/stylesheets/clovineTrend.css'/>
+
+    <!-- 공통 JS -->
+    <script src="/javascripts/ClendySideBar/j_initSideBar.js"></script>
+    <script src="/javascripts/ClendySideBar/j_loadSideBar.js"></script>
+    <script src="/javascripts/ClendySideBar/j_sideBarEvent.js"></script>
+    <script src="/javascripts/module.js"></script>
+  </head>
+  <body>
+  <div class = "public_contents_div">
+    <div class = "wrap_left_aside" id = "left_aside_menu">
+      <div class = "aside_title flex flex-j-center flex-a-center">
+        <div class = "margin-r-16">
+          <img class = "main_logo">
+          </div>
+        <div class = "font-16b white-color">HeavenTree</div>
+        <div class = "font-16b white-color margin-l-8 margin-r-16">Clendy</div>
+      </div>
+      <div class = "aside_menu">
+        <div class = "aside_category_div flex margin-t-40">
+          <div class = "aside_category font-14b white-color margin-l-16 flex flex-a-center">Clovine App</div>
+          <div class = "aside_category_fold fold_category_icon" id = "clovine_app_categori_arrowbtn"></div>
+        </div>
+        <table class = "aside_public_table aside_menu_content" id ="clovine_app_categori">
+          <thead></thead>
+          <tbody>
+          <tr></tr>
+          <tr class = "select_item">
+            <td class = "clovine_trend_icon margin-lr-16"></td>
+            <td class = "font-14b basic-font-color aside_menu text-white">Clovine Trend</td>
+            <td class = "font-14b basic-font-color"></td>
+          </tr>
+          <tr>
+            <td class = "networks_icon  margin-lr-16"></td>
+            <td class = "font-14b basic-font-color aside_menu">Clovine Networks</td>
+            <td class = "font-14b basic-font-color"></td>
+          </tr>
+          <tr>
+            <td class = "analytics_icon  margin-lr-16"></td>
+            <td class = "font-14b basic-font-color aside_menu">Clovine Analytics</td>
+            <td class = "font-14b basic-font-color"></td>
+          </tr>
+          <tr>
+            <td class = "clovine_license_icon  margin-lr-16"></td>
+            <td class = "font-14b basic-font-color aside_menu">License Management</td>
+            <td class = "font-14b basic-font-color"></td>
+          </tr>
+          </tbody>
+        </table>
+        <div class = "aside_category_div flex margin-t-40">
+          <div class = "aside_category font-14b white-color margin-l-16 flex flex-a-center">HeavenTree</div>
+          <div class = "aside_category_fold fold_category_icon" id = "heaventree_app_categori_arrowbtn"></div>
+        </div>
+        <table class = "aside_public_table aside_menu_content" id ="heaventree_app_categori">
+          <thead></thead>
+          <tbody>
+          <tr></tr>
+          <tr>
+            <td class = "clovine_trend_icon margin-lr-16"></td>
+            <td class = "font-14b basic-font-color aside_menu">HeavenTree MemberInfo</td>
+            <td class = "font-14b basic-font-color"></td>
+          </tr>
+          </tbody>
+        </table>
+      <div class = "aside_connector">
+      </div>
+    </div>
+  </div>
+
+    <div class = "wrap_header flex flex-a-center padding-lr-40">
+      <!--      <div class = "topbar_content text-left flex flex-a-center ">-->
+      <!--        <div class = "news_time font-14n white-color margin-b-4 margin-l-32"># 9월 21일</div>-->
+      <!--        <div class = "top_bar_vertical_bar gray-color margin-lr-16"></div>-->
+      <!--        <div class = "news_title font-14n white-color margin-b-4 ">헤븐트리 실시간 트렌트 제공 서비스가 오픈되었습니다.</div>-->
+      <!--        <div class = "news_sources font-14b white-color margin-b-4"></div>-->
+      <!--      </div>-->
+    </div>
+
+
+    <div class = "main_body_content">
+      <div class = "content_header_div">
+        <div class = "content_header_title white-color font-20b background-font-color margin-b-8">CLOVINE TREND</div>
+        <div class = "content_description margin-b-16 font-14n">실시간 클로바인 트렌드 및 정보를 제공합니다.</div>
+      </div>
+      <div class ="card">
+        <div class = "card_body padding-a-8">
+          <div class = "card_title font-14b light-gray-color padding-b-8">Clovine Active Users</div>
+          <div class = "card_content font-30b padding-tb-16 card_body_gray_color">36,254 명</div>
+          <div class = "card_footer font-14b padding-t-8 flex flex-a-center">
+            <p class = "up_green_color margin-r-16">5.27%</p>
+            <p class = "light-gray-color">Since last month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
