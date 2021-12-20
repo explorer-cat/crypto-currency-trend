@@ -7,8 +7,10 @@
 var app = require('../app');
 var debug = require('debug')('clovine-trendy-for-trend:server');
 var http = require('http');
+const connection = require('../database/databaseConnection');
 
 /**
+ * 
  * Get port from environment and store in Express.
  */
 
