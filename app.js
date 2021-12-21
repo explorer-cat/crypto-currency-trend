@@ -7,9 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var mariadb = require('./database/databaseConnection');
+// var mariadb = require('./database/databaseConnection');
 
-// mariadb.getConnection();
+// mariadb.getConnection(function(callback) {
+//   console.log('callback', callback);
+
+// });
 
 // mongoose.connect("mongodb://localhost:27017",{
 //     dbName: "company-trend",
