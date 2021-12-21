@@ -7,12 +7,13 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-//local mongoose connect!
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017",{
-    dbName: "company-trend",
-  }).then(() => console.log(`mongoDB connection`)).catch((err) => console.error(err));
+var mariadb = require('./database/databaseConnection');
 
+// mariadb.getConnection();
+
+// mongoose.connect("mongodb://localhost:27017",{
+//     dbName: "company-trend",
+//   }).then(() => console.log(`mongoDB connection`)).catch((err) => console.error(err));
 
 var app = express();
 // view engine setup
