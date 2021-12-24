@@ -7,14 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* clendy. */
-router.get('/clovine-trend', function(req, res, next) {
-  res.render('clovine-trend', { title: 'clovine Trend for Clen:D' });
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard', { title: 'clovine Trend for Clen:D' });
 });
 
-/* clendy. */
-router.get('/heaventree-member', function(req, res, next) {
-  res.render('heaventree-member', { title: 'clovine Trend for Clen:D' });
-});
 
 
 
