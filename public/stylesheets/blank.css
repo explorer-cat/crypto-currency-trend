@@ -424,6 +424,10 @@
     color:var(--color-up-green);
 }
 
+.down_red_color {
+    color:var(--color-down-red);
+}
+
 .body_background {
     background-color:var(--body-background);
 }

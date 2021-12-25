@@ -107,147 +107,61 @@
         </div>
         <div class="first-line" style="display: flex">
             <div class="test2" style="">
-                <div class="card margin-r-12">
-                    <div class="work_info_card padding-a-16">
-                        <div class="card_title font-14b background-font-color margin-b-8">임직원 근무 현황</div>
-                        <div class="card_title font-12n card_body_gray_color">근무중인 임직원 자세히보기</div>
-                        <canvas class="card_content margin-l-16" id="working_member" width="250" height="215"></canvas>
-                        <div class="card_footer font-14b padding-t-8" id="work_chart_result">
-
-                            <div class="workchart_result_text float-left flex margin-lr-16">
-                                <div class="chart_working margin-r-4"></div>
-                                <div class="font-12n">근무중 <b>45</b></div>
-                            </div>
-
-                            <div class="workchart_result_text float-left flex margin-lr-4">
-                                <div class="chart_vacation margin-r-4"></div>
-                                <div class="font-12n">휴가 <b>4</b></div>
-                            </div>
-
-                            <div class="workchart_result_text float-left flex margin-lr-4">
-                                <div class="chart_working_out_side margin-r-4"></div>
-                                <div class="font-12n">외근 <b>4</b></div>
-                            </div>
-
-                            <div class="workchart_result_text float-left flex margin-lr-16">
-                                <div class="chart_not_working margin-r-4"></div>
-                                <div class="font-12n">출근전 <b>43</b></div>
-                            </div>
-
-                            <div class="workchart_result_text float-left flex margin-lr-4">
-                                <div class="chart_leave_work margin-r-4"></div>
-                                <div class="font-12n">퇴근 <b>5</b></div>
-                            </div>
-
-                            <div class="workchart_result_text float-left flex margin-lr-4">
-                                <div class="chart_business_trip margin-r-4"></div>
-                                <div class="font-12n">출장 <b>1</b></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="test flex" style="width: 71%;display: block;">
+            <div class="flex" style="width: 71%;display: block;">
+
                 <div class="vertical-double-box">
                     <div class="small-card margin-r-12">
                         <div class="work_info_card padding-a-16">
-                            <div class="card_title font-14b background-font-color margin-b-8">비트코인
+                            <div class="card_title font-14b background-font-color margin-b-8">비트코인(BTC)
                             </div>
                             <div class="card_title font-12n card_body_gray_color">upbit 원화 기준 비트코인 가격</div>
-                            <div id = "upbit_bitcoin_krw" class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center"></div>
-                            <div id = "upbit_bitcoin_signed_change_price" class="font-14n margin-l-4 color up_green_color">dd</div>
+                            <div class = "flex" >
+                                <div id = "upbit_BTC_krw" class="card_title font-20b  padding-tb-24 flex flex-a-center"></div>
+                                <div id = "upbit_BTC_signed_change_rate" class="font-14n margin-l-4 color flex flex-a-center"></div>
+                            </div>
                             <div class="font-12n margin-l-4 card_body_gray_color"></div>
                         </div>
                     </div>
-                    <div class="small-card margin-r-12 margin-t-16">
-                        <div class="work_info_card padding-a-16">
-                            <div class="card_title font-14b background-font-color margin-b-8 ">평균 근무시간</div>
-                            <div class="card_title font-12n card_body_gray_color">헤븐트리 임직원 평균 근무시간입니다.</div>
-                            <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">9시간 23분
-                                <div class="font-14n margin-l-4 color up_green_color"> + 전일대비 29분</div>
-                            </div>
-                            <div class="font-12n margin-l-4 card_body_gray_color">Last update : 2021-12-01</div>
-                        </div>
-                    </div>
                 </div>
-                <div class="vertical-card margin-r-12">
+                <div class="vertical-double-box">
+                <div class="small-card margin-r-12">
                     <div class="work_info_card padding-a-16">
-                        <div class="card_title font-14b background-font-color margin-b-8">부서별 분포도
+                        <div class="card_title font-14b background-font-color margin-b-8">이더리움(ETH)
+                            <div class="card_title font-14b background-font-color margin-b-8">
+                            </div>
+                            <div class="card_title font-12n card_body_gray_color">upbit 원화 기준 이더리움 가격</div>
+                            <div class = "flex" >
+                                <div id = "upbit_ETH_krw" class="card_title font-20b padding-tb-24 flex flex-a-center"></div>
+                                <div id = "upbit_ETH_signed_change_rate" class="font-14n margin-l-4 color flex flex-a-center"></div>
+                            </div>
+                            <div class="font-12n margin-l-4 card_body_gray_color"></div>
                         </div>
-                      <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                        <div class = "bunfoTitle">경영진</div>
-                        <span class="progressbar bar-status-10"><span class="gauge"></span></span>
-                        3명
-                      </div>
-                        <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                          <div class = "bunfoTitle">경영관리팀</div>
-                         <span class="progressbar bar-status-10"><span class="gauge"></span></span>
-                          3명
-                        </div>
-                      <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                        <div class = "bunfoTitle">연구소</div>
-                        <span class="progressbar bar-status-50"><span class="gauge"></span></span>
-                        30명
-                      </div>
-                      <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                        <div class = "bunfoTitle">마케팅</div>
-                        <span class="progressbar bar-status-30"><span class="gauge"></span></span>
-                        10명
-                      </div>
-                      <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                        <div class = "bunfoTitle">디자인</div>
-                        <span class="progressbar bar-status-20"><span class="gauge"></span></span>
-                        5명
-                      </div>
-                      <div class="card_title font-12n card_body_gray_color padding-tb-8">
-                        <div class = "bunfoTitle">기타</div>
-                        <span class="progressbar bar-status-10"><span class="gauge"></span></span>
-                        3명
-                      </div>
+
                     </div>
                 </div>
-<!--              <div class="small-card margin-r-12">-->
-<!--                <div class="work_info_card padding-a-16">-->
-<!--                  <div class="card_title font-14b background-font-color margin-b-8">헤븐트리 임직원 현황-->
-<!--                  </div>-->
-<!--                  <div class="card_title font-12n card_body_gray_color">전일 기준 ( 2021.11.26 17:00 )</div>-->
-<!--                  <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">42명-->
-<!--                    <div class="font-14n margin-l-4 color up_green_color"> + 3명</div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="small-card margin-r-12">-->
-<!--                <div class="work_info_card padding-a-16">-->
-<!--                  <div class="card_title font-14b background-font-color margin-b-8">헤븐트리 임직원 현황-->
-<!--                  </div>-->
-<!--                  <div class="card_title font-12n card_body_gray_color">전일 기준 ( 2021.11.26 17:00 )</div>-->
-<!--                  <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">42명-->
-<!--                    <div class="font-14n margin-l-4 color up_green_color"> + 3명</div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="small-card margin-r-12">-->
-<!--                <div class="work_info_card padding-a-16">-->
-<!--                  <div class="card_title font-14b background-font-color margin-b-8">헤븐트리 임직원 현황-->
-<!--                  </div>-->
-<!--                  <div class="card_title font-12n card_body_gray_color">전일 기준 ( 2021.11.26 17:00 )</div>-->
-<!--                  <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">42명-->
-<!--                    <div class="font-14n margin-l-4 color up_green_color"> + 3명</div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="small-card margin-r-12">-->
-<!--                <div class="work_info_card padding-a-16">-->
-<!--                  <div class="card_title font-14b background-font-color margin-b-8">헤븐트리 임직원 현황-->
-<!--                  </div>-->
-<!--                  <div class="card_title font-12n card_body_gray_color">전일 기준 ( 2021.11.26 17:00 )</div>-->
-<!--                  <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">42명-->
-<!--                    <div class="font-14n margin-l-4 color up_green_color"> + 3명</div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
+                </div>
+                <div class="vertical-double-box">
+                    <div class="small-card margin-r-12">
+                        <div class="work_info_card padding-a-16">
+                            <div class="card_title font-14b background-font-color margin-b-8">리플(XRP)
+                                <div class="card_title font-14b background-font-color margin-b-8">
+                                </div>
+                                <div class="card_title font-12n card_body_gray_color">upbit 원화 기준 리플 가격</div>
+                                <div class = "flex" >
+                                    <div id = "upbit_XRP_krw" class="card_title font-20b padding-tb-24 flex flex-a-center"></div>
+                                    <div id = "upbit_XRP_signed_change_rate" class="font-14n margin-l-4 color flex flex-a-center"></div>
+                                </div>
+                                <div class="font-12n margin-l-4 card_body_gray_color"></div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+
+                
 
         </div>
     </div>
