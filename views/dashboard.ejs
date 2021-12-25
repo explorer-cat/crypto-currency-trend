@@ -17,14 +17,17 @@
     <link rel='stylesheet' href='/stylesheets/topbar/topbar.css'/>
     <link rel='stylesheet' href='/stylesheets/dashboard/companyInfo.css'/>
 
-    <!-- 공통 JS -->
-    <script src="/javascripts/constatns/dashboard/DashboardDataInfo.js"></script>
-    <script src="/javascripts/constatns/dashboard/LoadDashboardInfo.js"></script>
-    <script src="/javascripts/constatns/dashboard/DashboardManager.js"></script>
+    <script src="/javascripts/constants/dashboard/LoadDashboardInfo.js"></script>
+    <script src="/javascripts/constants/dashboard/DashboardDataInfo.js"></script>
+    <script src="/javascripts/constants/dashboard/DashboardManager.js"></script>
     <script src="/javascripts/module.js"></script>
+    <!-- 공통 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
     <!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
-
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
     <script src="/javascripts/lib/chart.js"></script>
 </head>
 <body>
@@ -152,9 +155,8 @@
                             <div class="card_title font-14b background-font-color margin-b-8">비트코인
                             </div>
                             <div class="card_title font-12n card_body_gray_color">upbit 원화 기준 비트코인 가격</div>
-                            <div class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center">
-                                <div class="font-14n margin-l-4 color up_green_color"></div>
-                            </div>
+                            <div id = "upbit_bitcoin_krw" class="card_title font-20b background-font-color padding-tb-24 flex flex-a-center"></div>
+                            <div id = "upbit_bitcoin_signed_change_price" class="font-14n margin-l-4 color up_green_color">dd</div>
                             <div class="font-12n margin-l-4 card_body_gray_color"></div>
                         </div>
                     </div>

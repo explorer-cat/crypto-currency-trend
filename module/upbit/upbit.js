@@ -2,12 +2,6 @@ const config = require('../../config')
 
 //업비트 모든 코인
 exports.getAllCoinInfo =  function(callback) {
-  let JWT_list = {
-    "upbitJWT" : "",
-    "bithumbJWT" : "", 
-    "error_api" : "",
-    "error" : false,
-  }
   try {
     return new Promise(resolve => {
       getUpbitJWT(function(result) {
