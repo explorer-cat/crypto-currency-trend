@@ -15,12 +15,14 @@ body {
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
 }
+
 .middle-card {
     display: inline-flex;
     width: 382px;
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
 }
+
 .vertical-card{
     display: inline-flex;
     width: 277px;

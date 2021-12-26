@@ -420,12 +420,12 @@
     color:var(--color-body-gray);
 }
 
-.up_green_color{
-    color:var(--color-up-green);
+.up_red_color{
+    color:var(--color-up-red);
 }
 
-.down_red_color {
-    color:var(--color-down-red);
+.down_blue_color {
+    color:var(--color-down-blue);
 }
 
 .body_background {

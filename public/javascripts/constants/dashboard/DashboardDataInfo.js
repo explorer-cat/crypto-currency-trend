@@ -65,18 +65,26 @@ function filterRequest(filter) {
 	}
 	socket.send(filter);
 }
+/**
+ * 전일 대비 상승,보합,하락에 따라 document의 색상을 변경해주는 함수
+ * RISE : 상승  EVEN : 보합  FALL : 하락
+ * 
+ * @created 최성우 2021-12-26 
+ * @param change <string> RISE : 상승  EVEN : 보합  FALL : 하락
+ * @param el <object> 색상을 변경할 element 
+ */
 
-//전일 대비 상승,보합,하락에 따라 document의 색상을 변경해주는 함수
-function setChangeToColor(code,change,el) {
+function setChangeToColor(change,el) {
     if(change === "RISE") {
         for (const property in el) {
-            el[property].classList.add("up_green_color")
-            el[property].classList.remove("down_red_color")
+            el[property].classList.add("up_red_color")
+            el[property].classList.remove("down_blue_color")
           }
     } else {
         for (const property in el) {
-            el[property].classList.add("down_red_color")
-            el[property].classList.remove("up_green_color")
+			console.log(el[property])
+            el[property].classList.add("down_blue_color")
+            el[property].classList.remove("up_red_color")
           }
     } 
 }

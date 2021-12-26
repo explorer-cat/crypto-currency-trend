@@ -92,7 +92,7 @@ wrap_header{
 /*모바일 화면*/
 @media screen and (max-width: 768px) {
     .wrap_left_aside{
-        width: 100px;
+        width: 70px;
     }
 }
 
