@@ -13,3 +13,14 @@ function hasClassName(target,keyword) {
         return false;
     }
 }
+
+
+/**
+ * 소수점을 제외시키고 정수를 , 찍는 (KRW) ? 표현방식으로 변환
+ * param {target}
+ * @created 최성우 2021-12-26 00:00 최초 개발
+ */
+
+function covertToKRW(target) {
+    return target.toLocaleString(undefined,{minimumFractionDigits: 0,maximumFractionDigits: 0})
+}
