@@ -41,18 +41,9 @@ function getUpbitCoinInfo(callback) {
             signed_change_rate : response.signed_change_rate * 100 //부호 있는 전일 등락률
         }
 
-		let trade_result = {
-			code : response.code,
-			trade_price : response.trade_price,
-			trade_volume : response.trade_volume,
-			ask_bid : response.ask_bid
-		}
-
             if(response.type === 'ticker') {
                 return callback(ticker_result);
-            } else if(response.type === 'trade') {
-                return callback(trade_result);
-			}
+            } 
 		}
 	}	
 
