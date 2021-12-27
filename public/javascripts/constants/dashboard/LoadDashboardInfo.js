@@ -6,6 +6,18 @@
 
 window.onload = async function () {
 
+    //업비트 고래 체결 시작
+    try {
+        response = await axios({
+            url            : '/getUpbitWhale',
+            method         : 'POST',
+            withCredentials: true,
+        });
+    } catch (e) {
+        console.log(e)
+    }
+
+
 
     //가격 , 등락률 , 등락가격
     let upbitBTC = {

@@ -10,8 +10,8 @@ body {
 
 .small-card{
     display: inline-flex;
-    width: 277px;
-    height: 164px;
+    width: 250px;
+    height: 100px;
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
 }
@@ -30,6 +30,7 @@ body {
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
 }
+
 
 .vertical-double-box {
     display: inline-grid;

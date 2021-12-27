@@ -9,8 +9,6 @@ var socket; // 소켓
 
 // 웹소켓 연결
 function getUpbitCoinInfo(callback) {
-
-
 	if(socket != undefined){
 		socket.close();
 	}
@@ -21,19 +19,20 @@ function getUpbitCoinInfo(callback) {
 	socket.onopen 	= function(e){ 
 		filterRequest(`[
             {"ticket":"UNIQUE_TICKET"},
-			{"type":"ticker","codes":["KRW-BTC","KRW-ETH","KRW-XRP"]}]`); 
+			{"type":"ticker","codes":["KRW-BTC","KRW-ETH","KRW-XRP"]},
+		    {"type":"trade","codes":["KRW-BTC"]}]`); 
 	}
 	socket.onclose 	= function(e){ 
 		socket = undefined; 
 	}
-	socket.onmessage= function(e){ 
+	socket.onmessage= async function(e){ 
 		let enc = new TextDecoder("utf-8");
 		let arr = new Uint8Array(e.data);
 		let str_d = enc.decode(arr);
 		let response = JSON.parse(str_d);
 
-
-        let result = {
+		//main_coin_ticker
+        let ticker_result = {
             code : response.code,
             trade_price : response.trade_price, //현재가
             change : response.change, //RISE : 상승  EVEN : 보합  FALL : 하락
@@ -41,11 +40,19 @@ function getUpbitCoinInfo(callback) {
             acc_trade_volume_24h : response.acc_trade_volume_24h,  //24시간 누적 거래량
             signed_change_rate : response.signed_change_rate * 100 //부호 있는 전일 등락률
         }
-            
+
+		let trade_result = {
+			code : response.code,
+			trade_price : response.trade_price,
+			trade_volume : response.trade_volume,
+			ask_bid : response.ask_bid
+		}
+
             if(response.type === 'ticker') {
-              //  console.log(result)
-                return callback(result);
-            }
+                return callback(ticker_result);
+            } else if(response.type === 'trade') {
+                return callback(trade_result);
+			}
 		}
 	}	
 

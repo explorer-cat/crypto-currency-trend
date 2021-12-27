@@ -19,6 +19,8 @@
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.2",
     "morgan": "~1.9.1",
+    "pm2": "^5.1.2",
+    "request-promise": "^4.2.6",
     "socket.io": "^4.4.0",
     "soket.io": "^0.0.1-security",
     "uuid": "^8.3.2",
