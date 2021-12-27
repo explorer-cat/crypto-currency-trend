@@ -19,11 +19,16 @@ router.get('/', function(req, res, next) {
 
 
 
-router.post('/getUpbitWhale', function(req, res, next) {
+router.post('/getUpbitWhale', async function(req, res, next) {
   try {
-      Auth.getUpbitWhale(req, res, function (result) {
-        res.send(result);
+      console.log('/getUpbitWhale!!');
+      await Auth.getUpbitWhale(req, res, function (result) {
+        if(result) {
+          console.log('router', result)
+          res.send(result);   
+        }
       })
+
   } catch (e) {
     console.debug('[ROUTER] [index.js] ', e)
     res.send(null);

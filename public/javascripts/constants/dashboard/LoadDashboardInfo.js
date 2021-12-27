@@ -4,17 +4,35 @@
  * @created 최성우 2021-09 00:00 최초 개발
  */
 
+
+
+
 window.onload = async function () {
 
+ test();
     //업비트 고래 체결 시작
-    try {
-        response = await axios({
-            url            : '/getUpbitWhale',
-            method         : 'POST',
-            withCredentials: true,
-        });
-    } catch (e) {
-        console.log(e)
+
+    async function test() {
+        try {
+            console.log('ddd?')
+            let response = await axios({
+                url            : '/getUpbitWhale',
+                method         : 'POST',
+                withCredentials: true,
+            });
+            console.log(response)
+            // if(response) {
+                 document.getElementById('upbit_whale_alert').innerHTML= response.data.price;
+                 test();
+            // }
+            
+            // if(response) {
+            //    
+            // }
+        } catch (e) {
+            console.log(e)
+        }
+    
     }
 
 
