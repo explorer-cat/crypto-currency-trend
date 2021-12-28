@@ -3,17 +3,45 @@ const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require('uuid');
 const rp = require('request-promise');
 const WebSocket = require('ws');
+const express = require('express');
+const app = express();
+var http = require('http').createServer(app)
+const io = require('socket.io')(http,{cors : {origin : "*"}})
 
+
+http.listen(3330, () => {
+  console.log('start server')
+})
 
 
 //업비트 고래 체결량 확인 module
 exports.getUpbitWhale =  async function(req, res, callback) {
 
-
   try {
+
+
+  //   io.sockets.on('connection', function (socket) {
+  //     console.log('connect')
+  //    if(socket) {
+  //      console.log('connect!')
+  //      socket.send('hi');
+  //    }
+  //  });
+ 
+    io.sockets.on('connection', function (socket) {
+      socket.emit('news', { hello: 'world' });
+      socket.on('my other event', function (data) {
+        console.log(data);
+      });
+    });
+
     var ws = new WebSocket('wss://api.upbit.com/websocket/v1');
+
+
+
+   // console.log('test', test)
+
     ws.on('open', ()=>{
-        console.log('trade websocket is connected')
         ws.send(`[
           {"ticket":"UNIQUE_TICKET"},
           {"type":"trade","codes":["KRW-BTC","KRW-ETH","KRW-XRP"]}]`)
@@ -21,7 +49,8 @@ exports.getUpbitWhale =  async function(req, res, callback) {
     ws.on('close', ()=>{
         console.log('trade websocket is closed');
     })  
-    ws.on('message', (data)=>{
+    // setInterval(async () => {
+      ws.on('message', (data)=>{
         try {
             var str = data.toString('utf-8')
             var response = JSON.parse(str)
@@ -32,9 +61,11 @@ exports.getUpbitWhale =  async function(req, res, callback) {
               error : false,
               price : buying_price
             }
-            if(buying_price > 3000000) {
-              ws.close();
-              return callback(result);
+            if(buying_price > 30000) {
+            //  await clientSocket.emit('message', 'zz');
+                console.log(buying_price)
+                //                ws.close();
+             // return callback(result);
             } 
 
             //   trades[json.cd] = json
@@ -42,6 +73,8 @@ exports.getUpbitWhale =  async function(req, res, callback) {
             console.log(e)
         }
     })
+    // },1000)
+
 
   } catch(e) {
 

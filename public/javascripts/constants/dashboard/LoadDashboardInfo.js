@@ -5,35 +5,65 @@
  */
 
 
-
-
 window.onload = async function () {
+    await test();
 
- test();
-    //업비트 고래 체결 시작
+    var socket =  io.connect('http://localhost:3330');
+    socket.on('message', function (message) {
+      console.log(message);
+    });
 
-    async function test() {
+    //var socket = io.connect('http://localhost:80')
+ 
+//    socket.on('message' , function(data) {
+//        console.log(data);
+//    })
+
+
+
+    // function connectToServer(host, port) {
+    //     var url = 'http://localhost:3000/';
+    //     var options = {
+    //         forceNew: true
+    //     };
+    //     socket = io.connect(url, options);
+
+    //     socket.on('connect', function() {
+    //         println('웹소켓 서버에 연결됨.' + url);
+    //     });
+    //     socket.on('disconnect', function() {
+    //         println('웹소켓 서버 종료됨.');
+    //     });
+
+    //     socket.on('message', function(message) {
+    //         $('#results').append('<p>' + JSON.stringify(message) + '</p>');
+    //     });
+
+    //     socket.on('response', function(input) {
+    //         println('응답 -> ' + JSON.stringify(input));
+    //     });
+    // }
+    //소켓 연결!
+    
+
+
+    //test();
+    async function test() { 
         try {
-            console.log('ddd?')
             let response = await axios({
                 url            : '/getUpbitWhale',
                 method         : 'POST',
                 withCredentials: true,
             });
-            console.log(response)
-            // if(response) {
-                 document.getElementById('upbit_whale_alert').innerHTML= response.data.price;
-                 test();
-            // }
-            
-            // if(response) {
-            //    
-            // }
+            if(response) {
+
+            }
         } catch (e) {
             console.log(e)
         }
-    
     }
+
+
 
 
 

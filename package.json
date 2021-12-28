@@ -16,6 +16,7 @@
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "mariadb": "^2.5.5",
+    "mocha-jsdom": "^2.0.0",
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.2",
     "morgan": "~1.9.1",
