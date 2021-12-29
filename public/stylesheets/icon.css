@@ -54,3 +54,9 @@
     content: url("../../images/analytics_icon.png");
 }
 
+.bitcoin_icon {
+    width: 16px !important;
+    height: 16px !important;
+    content: url("https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579")
+}
+

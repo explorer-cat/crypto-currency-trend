@@ -1,3 +1,5 @@
+let whaleAleartCount = 0;
+
 /**
  * 첫 대시보드 화면 로딩시 보여주는 데이터 캐싱 js
  *
@@ -26,30 +28,54 @@ window.onload = async function () {
 function getUpbitWhaleTrade(result) {
     let data = result.data;
     let buying_price = data.trade_price * data.trade_volume;
-
     //비트코인
-    if(buying_price > 10000000) {
+    let limit_price = 100000000;
+
+    if(buying_price > limit_price) {
         let change;
-        //upbit_whale_alert card_title font-20b flex flex-a-center
         let target = document.getElementById('upbit_whale_alert');
-        var div = document.createElement("div");
-        div.classList.add('flex','card_title','font-12b');
-        console.log(data)
-        if(data.change === 'FALL') {
-            div.classList.remove('up_red_color');
-            div.classList.add('down_blue_color');
-            change = '매도'
-        } else {
-            div.classList.remove('down_blue_color');
-            div.classList.add('up_red_color');
+        buying_price = buying_price / 100000000;
+
+        //출력건의 대한 코인 아이콘 지정
+        let alert_icon = document.createElement("div");
+        alert_icon.classList.add('bitcoin_icon')
+        alert_icon.classList.add('margin-r-4')
+        alert_icon.style.marginTop = '2px'
+
+        //출력건의 대한 Text 정보 출력
+        var alert_div = document.createElement("div");
+
+        alert_div.classList.add('flex','card_title','font-14b','padding-tb-8');
+      //  console.log(data)
+       // console.log(data.change)
+        if(data.ask_bid === 'BID') {
+            alert_div.classList.remove('down_blue_color');
+            alert_div.classList.add('up_red_color');
             change = '매수'
+        } else {
+            alert_div.classList.remove('up_red_color');
+            alert_div.classList.add('down_blue_color');
+            change = '매도'
         }
+
+        //홀수 출력건에 대해서 백그라운드 컬러를 지정한다.
+        if(whaleAleartCount % 2 === 0) {
+            alert_icon.style.backgroundColor = 'gray';
+            alert_div.style.background = 'gray'
+        }
+
         //axios 
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
 
-     
-        div.innerText = `[${change}] 비트코인 ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 0})} 원`
-        target.prepend(div);
+        alert_div.innerText = `[${change}] 비트코인 ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억`
+
+        //체결 금액 출력
+        target.prepend(alert_div);
+        //체결 금액 앞에 아이콘 삽입
+        alert_div.prepend(alert_icon);
+
+        //홀수 출력에 대해서는 background color를 삽입한다.
+        whaleAleartCount++;
     }
 }
 
