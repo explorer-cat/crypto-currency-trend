@@ -6,68 +6,57 @@
 
 
 window.onload = async function () {
-    await test();
-
-    var socket =  io.connect('http://localhost:3330');
-    socket.on('message', function (message) {
-      console.log(message);
-    });
-
-    //var socket = io.connect('http://localhost:80')
- 
-//    socket.on('message' , function(data) {
-//        console.log(data);
-//    })
-
-
-
-    // function connectToServer(host, port) {
-    //     var url = 'http://localhost:3000/';
-    //     var options = {
-    //         forceNew: true
-    //     };
-    //     socket = io.connect(url, options);
-
-    //     socket.on('connect', function() {
-    //         println('웹소켓 서버에 연결됨.' + url);
-    //     });
-    //     socket.on('disconnect', function() {
-    //         println('웹소켓 서버 종료됨.');
-    //     });
-
-    //     socket.on('message', function(message) {
-    //         $('#results').append('<p>' + JSON.stringify(message) + '</p>');
-    //     });
-
-    //     socket.on('response', function(input) {
-    //         println('응답 -> ' + JSON.stringify(input));
-    //     });
-    // }
-    //소켓 연결!
-    
-
-
-    //test();
-    async function test() { 
-        try {
-            let response = await axios({
-                url            : '/getUpbitWhale',
-                method         : 'POST',
-                withCredentials: true,
-            });
-            if(response) {
-
-            }
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-
-
-
-
     //가격 , 등락률 , 등락가격
+
+    //가공된 업비트 비트코인 정보를 받아옵니다.
+    getUpbitCoinInfo(async function (result) {
+
+        switch(result.type)  {
+            case "ticker" :
+                getBestCoinInfo(result);
+            break;
+            case "trade":
+                getUpbitWhaleTrade(result)
+            break;
+        }
+    });
+}
+
+//업비트 고래 매수/매도 체결 
+function getUpbitWhaleTrade(result) {
+    let data = result.data;
+    let buying_price = data.trade_price * data.trade_volume;
+
+    //비트코인
+    if(buying_price > 10000000) {
+        let change;
+        //upbit_whale_alert card_title font-20b flex flex-a-center
+        let target = document.getElementById('upbit_whale_alert');
+        var div = document.createElement("div");
+        div.classList.add('flex','card_title','font-12b');
+        console.log(data)
+        if(data.change === 'FALL') {
+            div.classList.remove('up_red_color');
+            div.classList.add('down_blue_color');
+            change = '매도'
+        } else {
+            div.classList.remove('down_blue_color');
+            div.classList.add('up_red_color');
+            change = '매수'
+        }
+        //axios 
+        //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
+
+     
+        div.innerText = `[${change}] 비트코인 ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 0})} 원`
+        target.prepend(div);
+    }
+}
+
+//메인 페이지 최상단 상위 코인 가격정보
+function getBestCoinInfo(result) {
+    let data = result.data;
+    
     let upbitBTC = {
         "KRW" : document.getElementById('upbit_BTC_krw'),
         "RATE" : document.getElementById('upbit_BTC_signed_change_rate'),
@@ -83,36 +72,31 @@ window.onload = async function () {
         "RATE" : document.getElementById('upbit_XRP_signed_change_rate'),
     }
 
-
-
-    //가공된 업비트 비트코인 정보를 받아옵니다.
-    getUpbitCoinInfo(async function (result) {
-        switch(result.code)  {
-            case "KRW-BTC":
-                upbitBTC.KRW.innerHTML = `${result.trade_price.toLocaleString()}원`;
-                upbitBTC.RATE.innerHTML = `전일대비 ${result.signed_change_rate.toFixed(2)}%`;
-
-                document.getElementById('upbit_BTC_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(result.acc_trade_volume_24h)} BTC`; 
-
-                //상승 보합 하락 기준에 따라 view를 다르게 지정합니다.
-                setChangeToColor(result.change, upbitBTC);
+    switch(data.code) {
+        case "KRW-BTC" :
+            upbitBTC.KRW.innerHTML = `${data.trade_price.toLocaleString()}원`;
+            upbitBTC.RATE.innerHTML = `전일대비 ${(data.signed_change_rate * 100).toFixed(2)}%`;
+    
+            document.getElementById('upbit_BTC_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(data.acc_trade_volume_24h)} BTC`; 
+    
+            //상승 보합 하락 기준에 따라 view를 다르게 지정합니다.
+            setChangeToColor(data.change, upbitBTC);
             break;
-            case "KRW-ETH":
-                upbitETH.KRW.innerHTML = `${result.trade_price.toLocaleString()}원`;
-                upbitETH.RATE.innerHTML = `전일대비 ${result.signed_change_rate.toFixed(2)}%`;
-                document.getElementById('upbit_ETH_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(result.acc_trade_volume_24h)} ETH`; 
+        case "KRW-ETH" :
+            upbitETH.KRW.innerHTML = `${data.trade_price.toLocaleString()}원`;
+            upbitETH.RATE.innerHTML = `전일대비 ${(data.signed_change_rate * 100).toFixed(2)}%`;
+            document.getElementById('upbit_ETH_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(data.acc_trade_volume_24h)} ETH`; 
 
                 //상승 보합 하락 기준에 따라 view를 다르게 지정합니다.
-                setChangeToColor(result.change, upbitETH);
-                break
-            case "KRW-XRP":
-                upbitXRP.KRW.innerHTML = `${result.trade_price.toLocaleString()}원`;
-                upbitXRP.RATE.innerHTML = `전일대비 ${result.signed_change_rate.toFixed(2)}%`;
-                document.getElementById('upbit_XRP_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(result.acc_trade_volume_24h)} XRP`; 
-
-                //상승 보합 하락 기준에 따라 view를 다르게 지정합니다.
-                setChangeToColor(result.change, upbitXRP);
-                break;
-        }
-    });
+            setChangeToColor(result.change, upbitETH);
+            break;
+        case "KRW-XRP" :
+            upbitXRP.KRW.innerHTML = `${data.trade_price.toLocaleString()}원`;
+            upbitXRP.RATE.innerHTML = `전일대비 ${(data.signed_change_rate * 100).toFixed(2)}%`;
+            document.getElementById('upbit_XRP_acc_trade_volume_24h').innerHTML = `24시간 거래량 : ${covertToKRW(data.acc_trade_volume_24h)} XRP`; 
+        
+                        //상승 보합 하락 기준에 따라 view를 다르게 지정합니다.
+            setChangeToColor(data.change, upbitXRP);
+            break;
+    }
 }

@@ -31,20 +31,18 @@ function getUpbitCoinInfo(callback) {
 		let str_d = enc.decode(arr);
 		let response = JSON.parse(str_d);
 
-		//main_coin_ticker
-        let ticker_result = {
-            code : response.code,
-            trade_price : response.trade_price, //현재가
-            change : response.change, //RISE : 상승  EVEN : 보합  FALL : 하락
-            signed_change_price : response.signed_change_price, //전일 대비 등락가격
-            acc_trade_volume_24h : response.acc_trade_volume_24h,  //24시간 누적 거래량
-            signed_change_rate : response.signed_change_rate * 100 //부호 있는 전일 등락률
-        }
 
-            if(response.type === 'ticker') {
-                return callback(ticker_result);
-            } 
+
+		switch(response.type) {
+			case 'ticker':
+				return callback({type : 'ticker', data : response,});	
+			break;
+			case 'trade' :
+				return callback({type : 'trade', data : response})
 		}
+        //      if(response.type === 'ticker') {
+        //     } else if (response.ty)
+		 }
 	}	
 
 // 웹소켓 연결 해제
@@ -80,7 +78,6 @@ function setChangeToColor(change,el) {
           }
     } else {
         for (const property in el) {
-			console.log(el[property])
             el[property].classList.add("down_blue_color")
             el[property].classList.remove("up_red_color")
           }
