@@ -24,3 +24,9 @@ function hasClassName(target,keyword) {
 function covertToKRW(target) {
     return target.toLocaleString(undefined,{minimumFractionDigits: 0,maximumFractionDigits: 0})
 }
+
+
+/*업비트 리스팅 코인 파싱*/
+function parseUpbitListingCoin() {
+
+}

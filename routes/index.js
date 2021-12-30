@@ -1,6 +1,5 @@
 var express = require('express');
-const { response } = require('../app');
-const Auth = require('../module/Auth/authorization');
+const Auth = require('../module/Auth/parseCoinInfo');
 var router = express.Router();
 const axios = require("axios");
 const WebSocket = require('ws');
@@ -19,16 +18,13 @@ router.get('/', function(req, res, next) {
 
 
 
-router.post('/getUpbitWhale', async function(req, res, next) {
+router.get('/getUpbitListingCoin', async function(req, res, next) {
   try {
-      console.log('/getUpbitWhale!!');
-      await Auth.getUpbitWhale(req, res, function (result) {
+      await Auth.parseUpbitCoin(req, res, function (result) {
         if(result) {
-          console.log('router', result)
-          res.send(result);   
+          res.json(result);   
         }
       })
-
   } catch (e) {
     console.debug('[ROUTER] [index.js] ', e)
     res.send(null);
