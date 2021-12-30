@@ -22,7 +22,7 @@ router.get('/getUpbitListingCoin', async function(req, res, next) {
   try {
       await Auth.parseUpbitCoin(req, res, function (result) {
         if(result) {
-          res.json(result);   
+          res.send(result);  
         }
       })
   } catch (e) {

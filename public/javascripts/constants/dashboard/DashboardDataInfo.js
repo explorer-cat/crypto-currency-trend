@@ -8,7 +8,9 @@
 var socket; // 소켓
 
 // 웹소켓 연결
-function getUpbitCoinInfo(callback) {
+
+
+async function getUpbitCoinInfo(callback) {
 	if(socket != undefined){
 		socket.close();
 	}
@@ -17,6 +19,8 @@ function getUpbitCoinInfo(callback) {
 	socket.binaryType = 'arraybuffer';
 
 	socket.onopen 	= function(e){ 
+		//소켓이 연결되면 
+		
 		filterRequest(`[
             {"ticket":"UNIQUE_TICKET"},
 			{"type":"ticker","codes":["KRW-BTC","KRW-ETH","KRW-XRP"]},
@@ -35,7 +39,7 @@ function getUpbitCoinInfo(callback) {
 
 		switch(response.type) {
 			case 'ticker':
-				return callback({type : 'ticker', data : response,});	
+				return callback({type : 'ticker', data : response});	
 			break;
 			case 'trade' :
 				return callback({type : 'trade', data : response})
