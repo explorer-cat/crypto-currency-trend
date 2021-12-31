@@ -1,4 +1,4 @@
-# my-company-trend
+# crypto-currency-trend(vanilla.js toyproject)
 
 crypto-currency-trend 
 Toy Project
