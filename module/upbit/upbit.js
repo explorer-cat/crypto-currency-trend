@@ -30,7 +30,7 @@ const getUpbitJWT = (callback) => {
       nonce: uuidv4(),
     };
 
-    const jwtToken = jwt.sign(payload, "1xw9NYGFO1QEu8CMcKjQiYx7w1OR0fe6xkubxtLP");
+    const jwtToken = jwt.sign(payload, "여기");
     const authorizationToken = `Bearer ${jwtToken}`;
     return callback(authorizationToken);
 }
