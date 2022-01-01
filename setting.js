@@ -4,12 +4,14 @@ module.exports = {
         {
           "market": "KRW-BTC",
           "korean_name": "비트코인",
-          "english_name": "Bitcoin"
+          "english_name": "Bitcoin",
+          "upbit_whale_limit" : 10000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ETH",
           "korean_name": "이더리움",
           "english_name": "Ethereum"
+          
         },
         {
           "market": "BTC-ETH",
