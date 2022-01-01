@@ -5,12 +5,17 @@
  */
 
 
+
 var socket; // 소켓
 
 // 웹소켓 연결
 
 
 async function getUpbitCoinInfo(callback) {
+	//코인 정보 불러오기
+	await getUpbitCryptoInfo();
+
+
 	if(socket != undefined){
 		socket.close();
 	}
@@ -88,6 +93,19 @@ function setChangeToColor(change,el) {
     } 
 }
 
+
+async function getUpbitCryptoInfo() {
+        try{
+            let response = await axios({
+                url: "/upbit/getUpbitCryptoInfo",
+                method: 'GET',
+            })
+			console.log(response);
+        }catch (e){
+            console.error(' isOKAPI 사용 불가능한 api 정보=> ',e)
+            response={err: true}
+        }
+}
 
 
 

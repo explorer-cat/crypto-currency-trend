@@ -1,36 +1,34 @@
-const config = require('../../config')
+const { list } = require('pm2');
+const setting = require('../../setting')
 
 //업비트 모든 코인
-exports.getAllCoinInfo =  function(callback) {
+
+// return new Promise(async function (resolve, reject) {
+//   await jwt.verify(token, config.tokenPublicKey, {algorithms: ['RS256']}, function (err, decoded) {
+//       if (err) {
+//           console.error(err)
+//           resolve({err:true});
+//       } else {
+//           resolve({err:false,value:decoded});
+//       }
+//   });
+// });
+
+exports.getAllCoinInfo =  function(req,res,callback) {
   try {
-    return new Promise(resolve => {
-      getUpbitJWT(function(result) {
-        if(result) {
-          JWT_list.upbitJWT = result;
-        } else {
-          JWT_list.error_api = "upbit"
-          JWT_list.error = true;
-          return callback(JWT_list)
+      let list = setting.listing;
+      let result = [];
+      let newArray = list.map((data,index) =>{
+        if(data.market.indexOf('KRW') !== -1) {
+          result.push(data);
         }
-      })    
-    return callback(JWT_list);
-    })
+      })
+      return callback(result)
   } catch (e) {
     console.log(e)
-    JWT_list = {"error_api" : "UNKNOWN","error" : true,}
-    return callback(JWT_list)
+    return callback({error:false})
   }
 }
 
 
-const getUpbitJWT = (callback) => {
-    const payload = {
-    //onfig.upbitAPI.access_key
-      access_key: config.upbitAPI.access_key,
-      nonce: uuidv4(),
-    };
 
-    const jwtToken = jwt.sign(payload, "여기");
-    const authorizationToken = `Bearer ${jwtToken}`;
-    return callback(authorizationToken);
-}
