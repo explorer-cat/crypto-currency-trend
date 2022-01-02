@@ -26,10 +26,10 @@ window.onload = async function () {
 
 //업비트 고래 매수/매도 체결 
 function getUpbitWhaleTrade(result) {
-    let data = result.data;
+    let data = result.data
     let buying_price = data.trade_price * data.trade_volume;
     //비트코인
-    let limit_price = 100000000;
+    let limit_price = 50000000;
 
     if(buying_price > limit_price) {
         let change;
@@ -46,8 +46,7 @@ function getUpbitWhaleTrade(result) {
         var alert_div = document.createElement("div");
 
         alert_div.classList.add('flex','card_title','font-14b','padding-tb-8');
-      //  console.log(data)
-       // console.log(data.change)
+
         if(data.ask_bid === 'BID') {
             alert_div.classList.remove('down_blue_color');
             alert_div.classList.add('up_red_color');
@@ -67,7 +66,7 @@ function getUpbitWhaleTrade(result) {
         //axios 
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
 
-        alert_div.innerText = `[${change}] 비트코인 ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억`
+        alert_div.innerText = `[${change}] [${data.code}] ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억`
 
         //체결 금액 출력
         target.prepend(alert_div);

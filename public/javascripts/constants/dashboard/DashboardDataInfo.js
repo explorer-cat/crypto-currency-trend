@@ -13,8 +13,13 @@ var socket; // 소켓
 
 async function getUpbitCoinInfo(callback) {
 	//코인 정보 불러오기
-	await getUpbitCryptoInfo();
-
+	let upbitCoinData = await getUpbitCryptoInfo();
+	let upbitCodes = []
+	for(let marketlist of upbitCoinData.data) {
+		if(marketlist.market) {
+			upbitCodes.push(marketlist.market)
+		}
+	}
 
 	if(socket != undefined){
 		socket.close();
@@ -24,12 +29,13 @@ async function getUpbitCoinInfo(callback) {
 	socket.binaryType = 'arraybuffer';
 
 	socket.onopen 	= function(e){ 
+		console.log('33333333333')
 		//소켓이 연결되면 
 		
 		filterRequest(`[
             {"ticket":"UNIQUE_TICKET"},
 			{"type":"ticker","codes":["KRW-BTC","KRW-ETH","KRW-XRP"]},
-		    {"type":"trade","codes":["KRW-BTC"]}]`); 
+		    {"type":"trade","codes":${JSON.stringify(upbitCodes)}}]`); 
 	}
 	socket.onclose 	= function(e){ 
 		socket = undefined; 
@@ -49,9 +55,7 @@ async function getUpbitCoinInfo(callback) {
 			case 'trade' :
 				return callback({type : 'trade', data : response})
 		}
-        //      if(response.type === 'ticker') {
-        //     } else if (response.ty)
-		 }
+	  }
 	}	
 
 // 웹소켓 연결 해제
@@ -100,7 +104,9 @@ async function getUpbitCryptoInfo() {
                 url: "/upbit/getUpbitCryptoInfo",
                 method: 'GET',
             })
-			console.log(response);
+			if(response) {
+				return response;
+			}
         }catch (e){
             console.error(' isOKAPI 사용 불가능한 api 정보=> ',e)
             response={err: true}
