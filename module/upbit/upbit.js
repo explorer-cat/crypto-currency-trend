@@ -17,7 +17,7 @@ const setting = require('../../setting')
 exports.getAllCoinInfo =  function(req,res,callback) {
   try {
       let list = setting.listing;
-      let result = [];
+      let result = [{}];
       let newArray = list.map((data,index) =>{
         if(data.market.indexOf('KRW') !== -1) {
           result.push(data);

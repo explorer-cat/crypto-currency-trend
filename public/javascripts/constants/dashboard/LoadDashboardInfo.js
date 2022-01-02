@@ -29,7 +29,7 @@ function getUpbitWhaleTrade(result) {
     let data = result.data
     let buying_price = data.trade_price * data.trade_volume;
     //비트코인
-    let limit_price = 50000000;
+    let limit_price = 10000000;
 
     if(buying_price > limit_price) {
         let change;
@@ -65,8 +65,8 @@ function getUpbitWhaleTrade(result) {
 
         //axios 
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
-
-        alert_div.innerText = `[${change}] [${data.code}] ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억`
+        console.log(data)
+        alert_div.innerText = `[${change}] [${data.code}] ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 [${data.trade_time}]`
 
         //체결 금액 출력
         target.prepend(alert_div);
