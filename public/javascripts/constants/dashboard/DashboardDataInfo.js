@@ -15,7 +15,7 @@ async function getUpbitCoinInfo(callback) {
 	//코인 정보 불러오기
 	let upbitCoinData = await getUpbitCryptoInfo();
 	let upbitCodes = []
-	
+
 	for(let marketlist of upbitCoinData.data) {
 		if(marketlist.market) {
 			upbitCodes.push(marketlist.market)
@@ -30,7 +30,6 @@ async function getUpbitCoinInfo(callback) {
 	socket.binaryType = 'arraybuffer';
 
 	socket.onopen 	= function(e){ 
-		console.log('33333333333')
 		//소켓이 연결되면 
 		
 		filterRequest(`[
@@ -54,10 +53,26 @@ async function getUpbitCoinInfo(callback) {
 				return callback({type : 'ticker', data : response});	
 			break;
 			case 'trade' :
-				return callback({type : 'trade', data : response})
+				let result = {};
+				let buying_price = response.trade_price * response.trade_volume;
+				//비트코인
+				let limit_price = 10000000;
+
+			
+				if(buying_price > limit_price) {
+					result = {
+						code : response.code,
+						ask_bid :response.ask_bid,
+						trade_price : buying_price,
+						trade_time : response.trade_time,
+					}
+					return callback({type : 'trade', data : result})
+				} else {
+					return callback({type : 'trade', error:true})
+				}
+			}
 		}
 	  }
-	}	
 
 // 웹소켓 연결 해제
 function closeWS() {

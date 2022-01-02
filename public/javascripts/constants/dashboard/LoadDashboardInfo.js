@@ -18,7 +18,9 @@ window.onload = async function () {
                 getBestCoinInfo(result);
             break;
             case "trade":
-                getUpbitWhaleTrade(result)
+                if(!result.error) {
+                    getUpbitWhaleTrade(result)
+                } 
             break;
         }
     });
@@ -26,15 +28,10 @@ window.onload = async function () {
 
 //업비트 고래 매수/매도 체결 
 function getUpbitWhaleTrade(result) {
-    let data = result.data
-    let buying_price = data.trade_price * data.trade_volume;
-    //비트코인
-    let limit_price = 10000000;
-
-    if(buying_price > limit_price) {
         let change;
+        let data = result.data;
+        let buying_price = data.trade_price * data.trade_volume;
         let target = document.getElementById('upbit_whale_alert');
-        buying_price = buying_price / 100000000;
 
         //출력건의 대한 코인 아이콘 지정
         let alert_icon = document.createElement("div");
@@ -62,11 +59,10 @@ function getUpbitWhaleTrade(result) {
             alert_icon.style.backgroundColor = 'gray';
             alert_div.style.background = 'gray'
         }
-
-        //axios 
+        data.trade_price = data.trade_price / 100000000;
+        //axios //${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
-        console.log(data)
-        alert_div.innerText = `[${change}] [${data.code}] ${buying_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 [${data.trade_time}]`
+        alert_div.innerText = `[${change}] [${data.code}] ${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 [${data.trade_time}]`
 
         //체결 금액 출력
         target.prepend(alert_div);
@@ -76,7 +72,8 @@ function getUpbitWhaleTrade(result) {
         //홀수 출력에 대해서는 background color를 삽입한다.
         whaleAleartCount++;
     }
-}
+
+
 
 //메인 페이지 최상단 상위 코인 가격정보
 function getBestCoinInfo(result) {
