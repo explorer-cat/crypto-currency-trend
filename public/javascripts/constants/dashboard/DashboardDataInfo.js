@@ -15,6 +15,7 @@ async function getUpbitCoinInfo(callback) {
 	//코인 정보 불러오기
 	let upbitCoinData = await getUpbitCryptoInfo();
 	let upbitCodes = []
+	
 	for(let marketlist of upbitCoinData.data) {
 		if(marketlist.market) {
 			upbitCodes.push(marketlist.market)
