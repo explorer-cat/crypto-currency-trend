@@ -16,9 +16,15 @@ async function getUpbitCoinInfo(callback) {
 	let upbitCoinData = await getUpbitCryptoInfo();
 	let upbitCodes = []
 
+	let dataMap = new Map();
+	dataMap.set(upbitCoinData.data);
+
 	for(let marketlist of upbitCoinData.data) {
 		if(marketlist.market) {
 			upbitCodes.push(marketlist.market)
+
+			//marekt 이름을 key값으로 하여 Map 을 만들고 value 를 코인마다 다른 체결 limit 를 부여
+			dataMap.set(marketlist.market, [marketlist.korean_name, marketlist.upbit_whale_limit])
 		}
 	}
 
@@ -55,16 +61,22 @@ async function getUpbitCoinInfo(callback) {
 			case 'trade' :
 				let result = {};
 				let buying_price = response.trade_price * response.trade_volume;
-				//비트코인
-				let limit_price = 10000000;
 
-			
+				//response.code 를 통해 dataMap에서 해당 코인의 체결 limit 금액을 가져옴.
+				let limit_price = dataMap.get(response.code)[1];
+
 				if(buying_price > limit_price) {
+					let korean_name = dataMap.get(response.code)[0]
+					
+					console.log('limit_price', limit_price)
+					console.log('korean_name', korean_name)
+
 					result = {
 						code : response.code,
 						ask_bid :response.ask_bid,
 						trade_price : buying_price,
 						trade_time : response.trade_time,
+						korean_name : korean_name,
 					}
 					return callback({type : 'trade', data : result})
 				} else {

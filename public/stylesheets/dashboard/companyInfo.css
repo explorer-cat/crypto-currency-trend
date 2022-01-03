@@ -2,13 +2,13 @@
     width: 100%;
     box-sizing: border-box;
 }
-
+/* 
 .work_info_card:hover {
     box-sizing: border-box;
     border: solid 2px #575757;
     cursor: pointer;
     border-radius: 6px;
-}
+} */
 
 
 .upbit_whale_card {
@@ -21,12 +21,12 @@
 
 }
 
-.upbit_whale_card:hover {
+/* .upbit_whale_card:hover {
     box-sizing: border-box;
     border: solid 2px #575757;
     cursor: pointer;
     border-radius: 6px;
-}
+} */
 
 
 .upbit_whale_card_content{

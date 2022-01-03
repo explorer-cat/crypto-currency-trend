@@ -5,13 +5,13 @@ module.exports = {
           "market": "KRW-BTC",
           "korean_name": "비트코인",
           "english_name": "Bitcoin",
-          "upbit_whale_limit" : 10000000, //고래 체결 매수금액 제한폭
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ETH",
           "korean_name": "이더리움",
-          "english_name": "Ethereum"
-          
+          "english_name": "Ethereum",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ETH",
@@ -166,97 +166,117 @@ module.exports = {
         {
           "market": "KRW-NEO",
           "korean_name": "네오",
-          "english_name": "NEO"
+          "english_name": "NEO",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-MTL",
           "korean_name": "메탈",
-          "english_name": "Metal"
+          "english_name": "Metal",
+          "upbit_whale_limit" : 30000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-LTC",
           "korean_name": "라이트코인",
-          "english_name": "Litecoin"
+          "english_name": "Litecoin",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-XRP",
           "korean_name": "리플",
-          "english_name": "Ripple"
+          "english_name": "Ripple",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ETC",
           "korean_name": "이더리움클래식",
-          "english_name": "Ethereum Classic"
+          "english_name": "Ethereum Classic",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-OMG",
           "korean_name": "오미세고",
-          "english_name": "OmiseGo"
+          "english_name": "OmiseGo",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-SNT",
           "korean_name": "스테이터스네트워크토큰",
-          "english_name": "Status Network Token"
+          "english_name": "Status Network Token",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-WAVES",
           "korean_name": "웨이브",
-          "english_name": "Waves"
+          "english_name": "Waves",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-XEM",
           "korean_name": "넴",
-          "english_name": "NEM"
+          "english_name": "NEM",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-QTUM",
           "korean_name": "퀀텀",
-          "english_name": "Qtum"
+          "english_name": "Qtum",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-LSK",
           "korean_name": "리스크",
-          "english_name": "Lisk"
+          "english_name": "Lisk",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-STEEM",
           "korean_name": "스팀",
-          "english_name": "Steem"
+          "english_name": "Steem",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
+          
         },
         {
           "market": "KRW-XLM",
           "korean_name": "스텔라루멘",
-          "english_name": "Lumen"
+          "english_name": "Lumen",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ARDR",
           "korean_name": "아더",
-          "english_name": "Ardor"
+          "english_name": "Ardor",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ARK",
           "korean_name": "아크",
-          "english_name": "Ark"
+          "english_name": "Ark",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-STORJ",
           "korean_name": "스토리지",
-          "english_name": "Storj"
+          "english_name": "Storj",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-GRS",
           "korean_name": "그로스톨코인",
-          "english_name": "Groestlcoin"
+          "english_name": "Groestlcoin",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-REP",
           "korean_name": "어거",
-          "english_name": "Augur"
+          "english_name": "Augur",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ADA",
           "korean_name": "에이다",
-          "english_name": "Ada"
+          "english_name": "Ada",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ADA",
@@ -276,17 +296,21 @@ module.exports = {
         {
           "market": "KRW-SBD",
           "korean_name": "스팀달러",
-          "english_name": "SteemDollars"
+          "english_name": "SteemDollars",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
+          
         },
         {
           "market": "BTC-SBD",
           "korean_name": "스팀달러",
-          "english_name": "SteemDollars"
+          "english_name": "SteemDollars",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-POWR",
           "korean_name": "파워렛저",
-          "english_name": "Power ledger"
+          "english_name": "Power ledger",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-POWR",
@@ -296,7 +320,8 @@ module.exports = {
         {
           "market": "KRW-BTG",
           "korean_name": "비트코인골드",
-          "english_name": "Bitcoin Gold"
+          "english_name": "Bitcoin Gold",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-ADA",
@@ -331,12 +356,14 @@ module.exports = {
         {
           "market": "KRW-ICX",
           "korean_name": "아이콘",
-          "english_name": "Icon"
+          "english_name": "Icon" ,
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-EOS",
           "korean_name": "이오스",
-          "english_name": "EOS"
+          "english_name": "EOS",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-TUSD",
@@ -346,12 +373,14 @@ module.exports = {
         {
           "market": "KRW-TRX",
           "korean_name": "트론",
-          "english_name": "TRON"
+          "english_name": "TRON",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-POLY",
           "korean_name": "폴리매쓰",
-          "english_name": "Polymath"
+          "english_name": "Polymath",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-SC",
@@ -366,37 +395,44 @@ module.exports = {
         {
           "market": "KRW-SC",
           "korean_name": "시아코인",
-          "english_name": "Siacoin"
+          "english_name": "Siacoin",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ONT",
           "korean_name": "온톨로지",
-          "english_name": "Ontology"
+          "english_name": "Ontology",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ZIL",
           "korean_name": "질리카",
-          "english_name": "Zilliqa"
+          "english_name": "Zilliqa",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-POLY",
           "korean_name": "폴리매쓰",
-          "english_name": "Polymath"
+          "english_name": "Polymath",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ZRX",
           "korean_name": "제로엑스",
-          "english_name": "0x Protocol"
+          "english_name": "0x Protocol",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-LOOM",
           "korean_name": "룸네트워크",
-          "english_name": "Loom Network"
+          "english_name": "Loom Network",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-BCH",
           "korean_name": "비트코인캐시",
-          "english_name": "Bitcoin Cash"
+          "english_name": "Bitcoin Cash",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-BCH",
@@ -406,12 +442,14 @@ module.exports = {
         {
           "market": "KRW-BCH",
           "korean_name": "비트코인캐시",
-          "english_name": "Bitcoin Cash"
+          "english_name": "Bitcoin Cash",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MFT",
           "korean_name": "메인프레임",
-          "english_name": "Mainframe"
+          "english_name": "Mainframe",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-LOOM",
@@ -421,22 +459,26 @@ module.exports = {
         {
           "market": "KRW-BAT",
           "korean_name": "베이직어텐션토큰",
-          "english_name": "Basic Attention Token"
+          "english_name": "Basic Attention Token",
+          "upbit_whale_limit" : 70000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-IOST",
           "korean_name": "아이오에스티",
-          "english_name": "IOST"
+          "english_name": "IOST",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-RFR",
           "korean_name": "리퍼리움",
-          "english_name": "Refereum"
+          "english_name": "Refereum",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-RFR",
           "korean_name": "리퍼리움",
-          "english_name": "Refereum"
+          "english_name": "Refereum",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-DGB",
@@ -446,17 +488,20 @@ module.exports = {
         {
           "market": "KRW-CVC",
           "korean_name": "시빅",
-          "english_name": "Civic"
+          "english_name": "Civic",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-IQ",
           "korean_name": "에브리피디아",
-          "english_name": "Everipedia"
+          "english_name": "Everipedia",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-IOTA",
           "korean_name": "아이오타",
-          "english_name": "IOTA"
+          "english_name": "IOTA",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-RVN",
@@ -481,32 +526,38 @@ module.exports = {
         {
           "market": "KRW-MFT",
           "korean_name": "메인프레임",
-          "english_name": "Mainframe"
+          "english_name": "Mainframe",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ONG",
           "korean_name": "온톨로지가스",
-          "english_name": "ONG"
+          "english_name": "ONG",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-GAS",
           "korean_name": "가스",
-          "english_name": "GAS"
+          "english_name": "GAS",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MTL",
           "korean_name": "메탈",
-          "english_name": "Metal"
+          "english_name": "Metal",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-UPP",
           "korean_name": "센티넬프로토콜",
-          "english_name": "Sentinel Protocol"
+          "english_name": "Sentinel Protocol",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ELF",
           "korean_name": "엘프",
-          "english_name": "aelf"
+          "english_name": "aelf",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "USDT-DOGE",
@@ -531,7 +582,8 @@ module.exports = {
         {
           "market": "KRW-KNC",
           "korean_name": "카이버네트워크",
-          "english_name": "Kyber Network"
+          "english_name": "Kyber Network",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MOC",
@@ -546,7 +598,8 @@ module.exports = {
         {
           "market": "KRW-BSV",
           "korean_name": "비트코인에스브이",
-          "english_name": "Bitcoin SV"
+          "english_name": "Bitcoin SV",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-BSV",
@@ -561,7 +614,8 @@ module.exports = {
         {
           "market": "KRW-THETA",
           "korean_name": "쎄타토큰",
-          "english_name": "Theta Token"
+          "english_name": "Theta Token",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-DENT",
@@ -571,7 +625,8 @@ module.exports = {
         {
           "market": "KRW-QKC",
           "korean_name": "쿼크체인",
-          "english_name": "QuarkChain"
+          "english_name": "QuarkChain",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ELF",
@@ -581,7 +636,8 @@ module.exports = {
         {
           "market": "KRW-BTT",
           "korean_name": "비트토렌트(OLD)",
-          "english_name": "BitTorrent(OLD)"
+          "english_name": "BitTorrent(OLD)",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-BTT",
@@ -611,7 +667,8 @@ module.exports = {
         {
           "market": "KRW-MOC",
           "korean_name": "모스코인",
-          "english_name": "Moss Coin"
+          "english_name": "Moss Coin",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ANKR",
@@ -626,22 +683,26 @@ module.exports = {
         {
           "market": "KRW-ENJ",
           "korean_name": "엔진코인",
-          "english_name": "Enjin"
+          "english_name": "Enjin",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-TFUEL",
           "korean_name": "쎄타퓨엘",
-          "english_name": "Theta Fuel"
+          "english_name": "Theta Fuel",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-MANA",
           "korean_name": "디센트럴랜드",
-          "english_name": "Decentraland"
+          "english_name": "Decentraland",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ANKR",
           "korean_name": "앵커",
-          "english_name": "Ankr"
+          "english_name": "Ankr",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ORBS",
@@ -656,22 +717,26 @@ module.exports = {
         {
           "market": "KRW-AERGO",
           "korean_name": "아르고",
-          "english_name": "Aergo"
+          "english_name": "Aergo",
+          "upbit_whale_limit" : 700000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-ATOM",
           "korean_name": "코스모스",
-          "english_name": "Cosmos"
+          "english_name": "Cosmos",
+          "upbit_whale_limit" : 700000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-TT",
           "korean_name": "썬더토큰",
-          "english_name": "Thunder Token"
+          "english_name": "Thunder Token",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-CRE",
           "korean_name": "캐리프로토콜",
-          "english_name": "Carry Protocol"
+          "english_name": "Carry Protocol",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ATOM",
@@ -686,7 +751,8 @@ module.exports = {
         {
           "market": "KRW-MBL",
           "korean_name": "무비블록",
-          "english_name": "MovieBloc"
+          "english_name": "MovieBloc",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-EOS",
@@ -716,7 +782,8 @@ module.exports = {
         {
           "market": "KRW-WAXP",
           "korean_name": "왁스",
-          "english_name": "WAX"
+          "english_name": "WAX",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-WAXP",
@@ -726,12 +793,14 @@ module.exports = {
         {
           "market": "KRW-HBAR",
           "korean_name": "헤데라",
-          "english_name": "Hedera"
+          "english_name": "Hedera",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-MED",
           "korean_name": "메디블록",
-          "english_name": "MediBloc"
+          "english_name": "MediBloc",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MED",
@@ -746,12 +815,14 @@ module.exports = {
         {
           "market": "KRW-MLK",
           "korean_name": "밀크",
-          "english_name": "MiL.k"
+          "english_name": "MiL.k",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-STPT",
           "korean_name": "에스티피",
-          "english_name": "Standard Tokenization Protocol"
+          "english_name": "Standard Tokenization Protocol",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-VET",
@@ -761,7 +832,8 @@ module.exports = {
         {
           "market": "KRW-ORBS",
           "korean_name": "오브스",
-          "english_name": "Orbs"
+          "english_name": "Orbs",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-CHZ",
@@ -771,7 +843,8 @@ module.exports = {
         {
           "market": "KRW-VET",
           "korean_name": "비체인",
-          "english_name": "VeChain"
+          "english_name": "VeChain",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-FX",
@@ -786,7 +859,8 @@ module.exports = {
         {
           "market": "KRW-CHZ",
           "korean_name": "칠리즈",
-          "english_name": "Chiliz"
+          "english_name": "Chiliz",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-XTZ",
@@ -816,7 +890,8 @@ module.exports = {
         {
           "market": "KRW-STMX",
           "korean_name": "스톰엑스",
-          "english_name": "StormX"
+          "english_name": "StormX",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-STMX",
@@ -836,7 +911,8 @@ module.exports = {
         {
           "market": "KRW-DKA",
           "korean_name": "디카르고",
-          "english_name": "dKargo"
+          "english_name": "dKargo",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-LINK",
@@ -846,12 +922,14 @@ module.exports = {
         {
           "market": "KRW-HIVE",
           "korean_name": "하이브",
-          "english_name": "Hive"
+          "english_name": "Hive",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-KAVA",
           "korean_name": "카바",
-          "english_name": "Kava"
+          "english_name": "Kava",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-KAVA",
@@ -861,22 +939,26 @@ module.exports = {
         {
           "market": "KRW-AHT",
           "korean_name": "아하토큰",
-          "english_name": "AhaToken"
+          "english_name": "AhaToken",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-LINK",
           "korean_name": "체인링크",
-          "english_name": "Chainlink"
+          "english_name": "Chainlink",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-XTZ",
           "korean_name": "테조스",
-          "english_name": "Tezos"
+          "english_name": "Tezos",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-BORA",
           "korean_name": "보라",
-          "english_name": "BORA"
+          "english_name": "BORA",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-JST",
@@ -901,7 +983,8 @@ module.exports = {
         {
           "market": "KRW-JST",
           "korean_name": "저스트",
-          "english_name": "JUST"
+          "english_name": "JUST",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-CTSI",
@@ -916,7 +999,8 @@ module.exports = {
         {
           "market": "KRW-CRO",
           "korean_name": "크립토닷컴체인",
-          "english_name": "Crypto.com Chain"
+          "english_name": "Crypto.com Chain",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-COMP",
@@ -936,7 +1020,8 @@ module.exports = {
         {
           "market": "KRW-TON",
           "korean_name": "톤",
-          "english_name": "TON"
+          "english_name": "TON",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-ONIT",
@@ -961,7 +1046,8 @@ module.exports = {
         {
           "market": "KRW-SXP",
           "korean_name": "스와이프",
-          "english_name": "Swipe"
+          "english_name": "Swipe",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-OXT",
@@ -976,7 +1062,8 @@ module.exports = {
         {
           "market": "KRW-HUNT",
           "korean_name": "헌트",
-          "english_name": "HUNT"
+          "english_name": "HUNT",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MARO",
@@ -996,12 +1083,14 @@ module.exports = {
         {
           "market": "KRW-PLA",
           "korean_name": "플레이댑",
-          "english_name": "PlayDapp"
+          "english_name": "PlayDapp",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-DOT",
           "korean_name": "폴카닷",
-          "english_name": "Polkadot"
+          "english_name": "Polkadot",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-SRM",
@@ -1021,12 +1110,14 @@ module.exports = {
         {
           "market": "KRW-SRM",
           "korean_name": "세럼",
-          "english_name": "Serum"
+          "english_name": "Serum",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-MVL",
           "korean_name": "엠블",
-          "english_name": "MVL"
+          "english_name": "MVL",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-GXC",
@@ -1051,12 +1142,14 @@ module.exports = {
         {
           "market": "KRW-STRAX",
           "korean_name": "스트라티스",
-          "english_name": "Stratis"
+          "english_name": "Stratis",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-AQT",
           "korean_name": "알파쿼크",
-          "english_name": "Alpha Quark Token"
+          "english_name": "Alpha Quark Token",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-GLM",
@@ -1066,7 +1159,8 @@ module.exports = {
         {
           "market": "KRW-GLM",
           "korean_name": "골렘",
-          "english_name": "Golem"
+          "english_name": "Golem",
+          "upbit_whale_limit" : 60000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-FCT2",
@@ -1081,17 +1175,20 @@ module.exports = {
         {
           "market": "KRW-SSX",
           "korean_name": "썸씽",
-          "english_name": "SOMESING"
+          "english_name": "SOMESING",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-META",
           "korean_name": "메타디움",
-          "english_name": "Metadium"
+          "english_name": "Metadium",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-FCT2",
           "korean_name": "피르마체인",
-          "english_name": "FirmaChain"
+          "english_name": "FirmaChain",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-FIL",
@@ -1146,7 +1243,8 @@ module.exports = {
         {
           "market": "KRW-CBK",
           "korean_name": "코박토큰",
-          "english_name": "Cobak Token"
+          "english_name": "Cobak Token",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-BFC",
@@ -1171,12 +1269,14 @@ module.exports = {
         {
           "market": "KRW-SAND",
           "korean_name": "샌드박스",
-          "english_name": "The Sandbox"
+          "english_name": "The Sandbox",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-HUM",
           "korean_name": "휴먼스케이프",
-          "english_name": "Humanscape"
+          "english_name": "Humanscape",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-IQ",
@@ -1191,7 +1291,8 @@ module.exports = {
         {
           "market": "KRW-DOGE",
           "korean_name": "도지코인",
-          "english_name": "Dogecoin"
+          "english_name": "Dogecoin",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-NEAR",
@@ -1221,7 +1322,8 @@ module.exports = {
         {
           "market": "KRW-STRK",
           "korean_name": "스트라이크",
-          "english_name": "Strike"
+          "english_name": "Strike",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-PUNDIX",
@@ -1231,27 +1333,32 @@ module.exports = {
         {
           "market": "KRW-PUNDIX",
           "korean_name": "펀디엑스",
-          "english_name": "Pundi X"
+          "english_name": "Pundi X",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-FLOW",
           "korean_name": "플로우",
-          "english_name": "Flow"
+          "english_name": "Flow",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-DAWN",
           "korean_name": "던프로토콜",
-          "english_name": "Dawn Protocol"
+          "english_name": "Dawn Protocol",
+          "upbit_whale_limit" : 50000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-AXS",
           "korean_name": "엑시인피니티",
-          "english_name": "Axie Infinity"
+          "english_name": "Axie Infinity",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-STX",
           "korean_name": "스택스",
-          "english_name": "Stacks"
+          "english_name": "Stacks",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-GRT",
@@ -1271,12 +1378,14 @@ module.exports = {
         {
           "market": "KRW-XEC",
           "korean_name": "이캐시",
-          "english_name": "eCash"
+          "english_name": "eCash",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-SOL",
           "korean_name": "솔라나",
-          "english_name": "Solana"
+          "english_name": "Solana",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-SOL",
@@ -1286,7 +1395,8 @@ module.exports = {
         {
           "market": "KRW-MATIC",
           "korean_name": "폴리곤",
-          "english_name": "Polygon"
+          "english_name": "Polygon",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-MATIC",
@@ -1296,7 +1406,8 @@ module.exports = {
         {
           "market": "KRW-NU",
           "korean_name": "누사이퍼",
-          "english_name": "Nucypher"
+          "english_name": "Nucypher",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-NU",
@@ -1306,12 +1417,14 @@ module.exports = {
         {
           "market": "KRW-AAVE",
           "korean_name": "에이브",
-          "english_name": "Aave"
+          "english_name": "Aave",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "KRW-1INCH",
           "korean_name": "1인치네트워크",
-          "english_name": "1inch Network"
+          "english_name": "1inch Network",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-AAVE",
@@ -1331,7 +1444,8 @@ module.exports = {
         {
           "market": "KRW-ALGO",
           "korean_name": "알고랜드",
-          "english_name": "Algorand"
+          "english_name": "Algorand",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-AUDIO",
@@ -1341,7 +1455,8 @@ module.exports = {
         {
           "market": "KRW-NEAR",
           "korean_name": "니어프로토콜",
-          "english_name": "NEAR Protocol"
+          "english_name": "NEAR Protocol",
+          "upbit_whale_limit" : 100000000, //고래 체결 매수금액 제한폭
         },
         {
           "market": "BTC-YGG",
