@@ -8,6 +8,18 @@ body {
     border-radius: 20px;
 }
 
+.title_news_card{
+    display: inline-flex;
+    width: 100%;
+    height: calc(60px - 16px);
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    border-radius: 20px;
+}
+
+.news_card_title {
+    background-color: rgba(95, 102, 112, 0.15);
+}
+
 .small-card{
     display: inline-flex;
     width: 250px;

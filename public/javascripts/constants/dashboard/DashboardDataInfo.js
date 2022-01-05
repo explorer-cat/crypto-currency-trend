@@ -67,7 +67,7 @@ async function getUpbitCoinInfo(callback) {
 
 				if(buying_price > limit_price) {
 					let korean_name = dataMap.get(response.code)[0]
-					
+					console.log('buying_price', buying_price)
 					console.log('limit_price', limit_price)
 					console.log('korean_name', korean_name)
 
