@@ -17,7 +17,8 @@ body {
 }
 
 .news_card_title {
-    background-color: rgba(95, 102, 112, 0.15);
+    height: 100%;
+
 }
 
 .small-card{
