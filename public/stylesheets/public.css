@@ -9,16 +9,32 @@ body {
 }
 
 .title_news_card{
-    display: inline-flex;
-    width: 100%;
-    height: calc(60px - 16px);
+    display: inline-block;
+    width: calc(100% - 277px);
+    height: calc(90px - 16px);
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
 }
 
 .news_card_title {
     height: 100%;
+}
+.coin-news-title {
+    justify-content: center;
+    background-color: #999;
+    border-radius: 17px;
+    padding: 8px;
+    margin-top: 5px;
+    height: 10px;
+}
 
+.coin-news-card{
+    display: inline-flex;
+    width: 250px;
+    height: 500px;
+    box-sizing: border-box;
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    border-radius: 20px;
 }
 
 .small-card{
