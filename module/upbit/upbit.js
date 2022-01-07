@@ -1,5 +1,7 @@
 const { list } = require('pm2');
 const setting = require('../../setting')
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 //업비트 모든 코인
 
@@ -21,7 +23,20 @@ exports.getAllCoinInfo =  function(req,res,callback) {
 
 
 /*업비트 크롤링*/
-exports.getUpbitMesuMedo = function(req,res,callback) {
-  return callback({data:'data!!'})
+exports.getUpbitMesuMedo = async function(req,res,callback) {
+  try {
+   await axios.get("https://upbit.com/trends").then(data => {
+     console.log(data)
+   })
+
+  } catch(e) {
+    console.error('getUpbit Error', e)
+  }
+//https://upbit.com/trends
 }
 
+// getUpbitMesuMedo().then(html => {
+//   let ulList = [];
+//   const cheerio = cheerio.load(html.data);
+//   console.log('cheerio', cheerio)
+// })
