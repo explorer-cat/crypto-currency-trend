@@ -24,6 +24,11 @@ window.onload = async function () {
             break;
         }
     });
+
+    getUpbitMesuMedo();
+
+    //업비트 일별 매수/매도 체결량 크롤링
+
 }
 
 //업비트 고래 매수/매도 체결 
@@ -122,3 +127,24 @@ function getBestCoinInfo(result) {
             break;
     }
 }
+
+
+async function getUpbitMesuMedo() {
+    try{
+        let response = await axios({
+            url: "/upbit/getUpbitMesuMedo",
+            method: 'GET',
+        })
+        if(response) {
+            console.log('this is getUpbitMesuMedo Response', response)
+                //받아온 크롤링 데이터를 HTML 에 표현하세요.
+
+        } else {
+            console.error('response data is null')
+        }
+    }catch (e){
+        console.error(' isOKAPI 사용 불가능한 api 정보=> ',e)
+        response={err: true}
+    }
+}
+

@@ -18,4 +18,19 @@ router.get('/getUpbitCryptoInfo', async function(req, res, next) {
   }
 })
 
+
+
+router.get('/getUpbitMesuMedo', async function(req, res, next) {
+  try {
+      await Upbit.getUpbitMesuMedo(req, res, function (result) {
+        if(result) {
+          res.send(result);  
+        }
+      })
+  } catch (e) {
+    console.debug('[ROUTER] [index.js] ', e)
+    res.send(null);
+  }
+})
+
 module.exports = router;

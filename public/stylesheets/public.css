@@ -31,7 +31,7 @@ body {
 .coin-news-card{
     display: inline-flex;
     width: 250px;
-    height: 500px;
+    height: 100px;
     box-sizing: border-box;
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     border-radius: 20px;
