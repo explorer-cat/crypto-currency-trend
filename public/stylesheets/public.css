@@ -41,23 +41,29 @@ body {
     display: inline-flex;
     width: 250px;
     height: 100px;
-    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
-    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(222 225 231) 2px 2px 4px;
+    border-top: 4px solid rgb(9, 54, 135);
+    border-radius: 4px;
 }
 
 .middle-card {
     display: inline-flex;
     width: 382px;
-    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
-    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(222 225 231) 2px 2px 4px;
+    border-top: 4px solid rgb(9, 54, 135);
+    border-radius: 4px;
 }
 
 .vertical-card{
     display: inline-flex;
     width: 277px;
     height: 340px;
-    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
-    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(222 225 231) 2px 2px 4px;
+    border-top: 4px solid rgb(9, 54, 135);
+    border-radius: 4px;
 }
 
 

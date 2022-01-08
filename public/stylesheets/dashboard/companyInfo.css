@@ -13,14 +13,33 @@
 
 .upbit_whale_card {
     box-sizing: border-box;
-    display: inline-flex;
+    display: block;
     width: 340px;
     height: 350px;
-    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
-    border-radius: 20px;
-
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(222 225 231) 2px 2px 4px;
+    border-top: 4px solid rgb(9, 54, 135);
+    border-radius: 4px;
 }
 
+.upbit_whale_card::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+.upbit_mesumedo_card {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 260px;
+    height: 350px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(222 225 231) 2px 2px 4px;
+    border-top: 4px solid rgb(9, 54, 135);
+    border-radius: 4px;
+}
 
 .coin_news_info_card {
     width: 100%;
@@ -38,8 +57,10 @@
 
 
 .upbit_whale_card_content{
-    width: 100%;
-    overflow: auto;
+    width: calc(100% - 16px);
+    height: 15%;
+    position: relative;
+    border-bottom: 1px solid rgb(212, 214, 220);
 }
 .main_body_content{
     width: calc(100% - 318px);
