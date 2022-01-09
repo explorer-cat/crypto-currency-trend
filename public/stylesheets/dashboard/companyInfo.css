@@ -32,7 +32,7 @@
 
 .upbit_mesumedo_card {
     box-sizing: border-box;
-    display: inline-flex;
+    display: block;
     width: 260px;
     height: 350px;
     background: rgb(255, 255, 255);
@@ -70,6 +70,9 @@
     float: right;
     overflow:auto;
     border-top-left-radius: 20px;
+}
+
+.detected_list_coin{
 }
 
 .content_header_title{

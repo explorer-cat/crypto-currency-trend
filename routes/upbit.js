@@ -33,4 +33,19 @@ router.get('/getUpbitMesuMedo', async function(req, res, next) {
   }
 })
 
+
+router.post('/getUpbitNewListCoin', async function(req, res, next) {
+  try {
+      await Upbit.getUpbitNewListCoin(req, res, function (result) {
+        if(result) {
+          res.send(result);  
+        }
+      })
+  } catch (e) {
+    console.debug('[ROUTER] [index.js] ', e)
+    res.send(null);
+  }
+})
+
+
 module.exports = router;

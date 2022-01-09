@@ -67,9 +67,6 @@ async function getUpbitCoinInfo(callback) {
 
 				if(buying_price > limit_price) {
 					let korean_name = dataMap.get(response.code)[0]
-					console.log('buying_price', buying_price)
-					console.log('limit_price', limit_price)
-					console.log('korean_name', korean_name)
 
 					result = {
 						code : response.code,
@@ -140,6 +137,23 @@ async function getUpbitCryptoInfo() {
             response={err: true}
         }
 }
+
+async function getUpbitNewListingCoin() {
+	try{
+		let response = await axios({
+			url: "/upbit/getUpbitNewListCoin",
+			method: 'POST',
+		})
+		if(response) {
+			console.log(response)
+			return response;
+		}
+	}catch (e){
+		console.error(' isOKAPI 사용 불가능한 api 정보=> ',e)
+		response={err: true}
+	}
+}
+
 
 
 

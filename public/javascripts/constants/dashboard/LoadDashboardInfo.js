@@ -25,7 +25,7 @@ window.onload = async function () {
         }
     });
 
-    getUpbitMesuMedo();
+    getUpbitNewListingCoin();
 
     //업비트 일별 매수/매도 체결량 크롤링
 
@@ -133,7 +133,7 @@ async function getUpbitMesuMedo() {
     try{
         let response = await axios({
             url: "/upbit/getUpbitMesuMedo",
-            method: 'GET',
+            method: 'POST',
         })
         if(response) {
             console.log('this is getUpbitMesuMedo Response', response)
@@ -147,4 +147,6 @@ async function getUpbitMesuMedo() {
         response={err: true}
     }
 }
+
+
 
