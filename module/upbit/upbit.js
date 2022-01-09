@@ -61,21 +61,14 @@ exports.getUpbitNewListCoin = async function(req,res,callback) {
       console.error('[getUpbitNewListCoin] 정보를 불러오던중 문제가 발생했습니다.')
       return callback({success : false});
     } 
-    else { 
-      return callback(response.data);
+    
+    if(!response.data || response.data.length <= 0) {
+      console.error('[getUpbitNewListCoin] response.data undefined')
+      return callback({success : false});
     }
-      // const enc = charset(response.headers, body) // 해당 사이트의 charset값을 획득
-      // console.log('utf8', enc)
-			// const i_result = iconv.decode(body, enc) // 획득한 charset값으로 body를 디코딩
-			// console.log(i_result)
 
-      // const decodedResult = await iconv.decode(body, 'utf8'); //iconv를 이용하여 해당 사이트의 인코딩 방식으로 body를 디코드
-      // console.log(decodedResult); //디코드 결과를 콜백
+    //DB에 
 
-      // const $ = cheerio.load(decodedResult);
-      // const $articleList = $('html').children('body').text()
-      // console.log($articleList)
-    // })
 
 
 
