@@ -1,4 +1,5 @@
-# crypto-currency-trend(vanilla.js toyproject)
+# crypto-currency-trend(vanilla.js , express.js , node.js , MariaDB toyproject)
+
 
 crypto-currency-trend 
 Toy Project
