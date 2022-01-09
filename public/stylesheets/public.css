@@ -80,3 +80,12 @@ body {
 .card_title{
 
 }
+
+.border_left_line{
+    border-left: 3px solid rgb(37, 53, 100);
+    padding-left: 8px;
+}
+
+.border_top_line{
+    border-left: 1px solid rgba(160, 160, 160, 0.726);
+}
