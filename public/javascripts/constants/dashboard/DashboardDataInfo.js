@@ -72,6 +72,7 @@ async function getUpbitCoinInfo(callback) {
 						code : response.code,
 						ask_bid :response.ask_bid,
 						trade_price : buying_price,
+						buying_price : response.trade_price,
 						trade_time : response.trade_time,
 						korean_name : korean_name,
 					}

@@ -6,6 +6,7 @@ const cheerio = require("cheerio");
 const iconv = require('iconv-lite');
 const charset = require('charset');
 const sanitizeHtml = require('sanitize-html');
+const db = require('../../database/databaseConnection')
 
 //업비트 모든 코인
 
@@ -36,20 +37,20 @@ exports.getUpbitMesuMedo = async function(req,res,callback) {
   } catch(e) {
     console.error('getUpbit Error', e)
   }
-//https://upbit.com/trends
 }
 
-// getUpbitMesuMedo().then(html => {
-//   let ulList = [];
-//   const cheerio = cheerio.load(html.data);
-//   console.log('cheerio', cheerio)
-// })
+exports.getNoticeInfo = async function(req,res,callback) {
+    
+
+}
 
 
 
 /*업비트 크롤링*/
 exports.getUpbitNewListCoin = async function(req,res,callback) {
   try {
+    console.log('db', db)
+
     let response = await axios.request({
       method: "GET",
       url: "https://s3.ap-northeast-2.amazonaws.com/crix-production/crix_master",
@@ -66,10 +67,6 @@ exports.getUpbitNewListCoin = async function(req,res,callback) {
       console.error('[getUpbitNewListCoin] response.data undefined')
       return callback({success : false});
     }
-
-    //DB에 
-
-
 
 
   } catch(e) {

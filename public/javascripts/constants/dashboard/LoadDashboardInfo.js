@@ -47,7 +47,7 @@ function getUpbitWhaleTrade(result) {
         //출력건의 대한 Text 정보 출력
         var alert_div = document.createElement("div");
 
-        alert_div.classList.add('flex','card_title','font-14b','padding-tb-8');
+        alert_div.classList.add('flex','card_title','font-1b','padding-tb-8');
 
         if(data.ask_bid === 'BID') {
             alert_div.classList.remove('down_blue_color');
@@ -67,7 +67,8 @@ function getUpbitWhaleTrade(result) {
         data.trade_price = data.trade_price / 100000000;
         //axios //${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
-        alert_div.innerText = `[${change}] [${data.korean_name}] ${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 [${data.trade_time}]`
+        //[${change}] 
+        alert_div.innerText = `${data.korean_name} 체결가 ${data.buying_price.toLocaleString()} 원 ${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 ${data.trade_time}`
 
         //체결 금액 출력
         target.prepend(alert_div);

@@ -1,34 +1,26 @@
 const mariadb = require('mariadb');
+const { connection } = require('mongoose');
 const config = require('../config');
 
 
-//local mariadb
-const db = mariadb.createPool({
-    host : config.DataBaseConnect.Host,
-    user : config.DataBaseConnect.User,
-    password : config.DataBaseConnect.Pass,
-    database : config.DataBaseConnect.Database,
-    connectionLimit : config.DataBaseConnect.connectionLimit
-   });
+const db = async () => {
+  try {
+    // db connection
+      let connection = await mariadb.createConnection({
+          host: "localhost",
+          user: "root",
+          password: "",
+          database: "coin-trend",
+      });
+      let rows = await connection.query("SELECT * FROM listing_coin")
+      console.log(rows);
+ 
+  } catch (error) {
+      console.log(error);
+  }
+};
 
-   db.getConnection((err, connection) => {
-    if (err) {
-      switch (err.code) {
-        case "PROTOCOL_CONNECTION_LOST":
-          console.error("Database connection was closed.");
-          break;
-        case "ER_CON_COUNT_ERROR":
-          console.error("Database has too many connections.");
-          break;
-        case "ECONNREFUSED":
-          console.error("Database connection was refused.");
-          break;
-      }
-    }
-    if (connection) {
-        console.log('db connection!')
-        return connection.release();
-    } 
-  });
-  
-  module.exports = db;
+db();
+
+
+

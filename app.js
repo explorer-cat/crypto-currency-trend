@@ -4,20 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const db = require('./database/databaseConnection')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var upbitRouter = require('./routes/upbit');
-
-// var mariadb = require('./database/databaseConnection');
-
-// mariadb.getConnection(function(callback) {
-//   console.log('callback', callback);
-
-// });
-
-// mongoose.connect("mongodb://localhost:27017",{
-//     dbName: "company-trend",
-//   }).then(() => console.log(`mongoDB connection`)).catch((err) => console.error(err));
 
 var app = express();
 // view engine setup
