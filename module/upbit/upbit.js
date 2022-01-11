@@ -6,7 +6,7 @@ const cheerio = require("cheerio");
 const iconv = require('iconv-lite');
 const charset = require('charset');
 const sanitizeHtml = require('sanitize-html');
-const db = require('../../database/databaseConnection')
+const conn = require('../../database/databaseConnection')
 
 //업비트 모든 코인
 
@@ -49,7 +49,10 @@ exports.getNoticeInfo = async function(req,res,callback) {
 /*업비트 크롤링*/
 exports.getUpbitNewListCoin = async function(req,res,callback) {
   try {
-    console.log('db', db)
+
+    conn.connect();
+    let [rows] = conn.query("SELECT * FROM coin-trend")
+    console.log(rows)
 
     let response = await axios.request({
       method: "GET",
@@ -68,7 +71,7 @@ exports.getUpbitNewListCoin = async function(req,res,callback) {
       return callback({success : false});
     }
 
-
+    return callback(response.data)
   } catch(e) {
     console.error('getUpbit Error', e)
   }

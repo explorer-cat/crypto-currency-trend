@@ -5,7 +5,7 @@ module.exports = {
           Host: "localhost",
           User: "root",
           Port : 3306,
-          Pass: "cch1676816@",
+          Pass: "",
           Database : 'coin-trend', 
           connectionLimit : 30
         },
