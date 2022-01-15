@@ -37,6 +37,8 @@ function getUpbitWhaleTrade(result) {
         let data = result.data;
         let buying_price = data.trade_price * data.trade_volume;
         let target = document.getElementById('upbit_whale_alert');
+        let date = ConvertDateTime(new Date());
+
 
         //출력건의 대한 코인 아이콘 지정
         let alert_icon = document.createElement("div");
@@ -67,8 +69,9 @@ function getUpbitWhaleTrade(result) {
         data.trade_price = data.trade_price / 100000000;
         //axios //${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}
         //해당 내역은 24시간 통계를 위해 백엔드로 넘겨서 DB에 저장하고 통계 제공할것.
-        //[${change}] 
         alert_div.innerText = `${data.korean_name} 체결가 ${data.buying_price.toLocaleString()} 원 ${data.trade_price.toLocaleString(undefined, {maximumFractionDigits: 1})}억 ${data.trade_time}`
+
+        document.getElementById('whale_update_time').innerHTML = 'last update : '+date.all
 
         //체결 금액 출력
         target.prepend(alert_div);

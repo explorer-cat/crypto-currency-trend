@@ -30,3 +30,45 @@ function covertToKRW(target) {
 function parseUpbitListingCoin() {
 
 }
+
+/**
+ * 날짜 시간 변환 함수
+ *
+ * @param   Modified    Date
+ * @returns {{all: string, date: string, time: string}}
+ */
+ function ConvertDateTime(Modified) {
+    Modified = new Date(Modified);
+    let m = moment(Modified);
+
+    let time = "";
+    if (Modified.getHours() < 12) {
+        time = '오전';
+    }
+    else {
+        time = '오후';
+    }
+
+    let convertedDate = m.format("YYYY-MM-DD");
+    let convertedTimeHMS = time + m.format(" " + "hh:mm:ss");
+    let convertedTimeHM = time + m.format(" " + "hh:mm");
+
+    return {all: convertedDate + " " + convertedTimeHMS, date: convertedDate, timeHMS: convertedTimeHMS, timeHM: convertedTimeHM};
+}
+//숫자단위를 화폐단위로 변환하는 함수
+function ConvertNumberToCurrency(Num) {
+    let Currency = parseFloat(parseFloat(Num.toString()).toFixed(2)).toString();
+    let location = Num.toString().indexOf('.');
+
+    if (location === -1) {
+        location = Num.toString().length;
+    }
+
+    for (let i = 0; i < location; i++) {
+        if (((i + 1) % 3) === 0 && i !== location - 1) {
+            Currency = [Currency.slice(0, location - 1 - i), ',', Currency.slice(location - 1 - i)].join('');
+        }
+    }
+
+    return Currency;
+};

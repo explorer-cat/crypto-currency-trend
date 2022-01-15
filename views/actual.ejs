@@ -12,6 +12,11 @@
     <link rel='stylesheet' href='/stylesheets/icon.css'/>
     <link rel='stylesheet' href='/stylesheets/public.css'/>
 
+    <!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+    <script src="/javascripts/lib/chart.js"></script>
+    <script src="/javascripts/lib/moment.min.js"></script>
+
     <!-- Side Bar Css -->
     <link rel='stylesheet' href='/stylesheets/aside/aside.css'/>
     <link rel='stylesheet' href='/stylesheets/topbar/topbar.css'/>
@@ -24,12 +29,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/javascripts/module.js"></script>
+
     <!-- <script src="../setting.js"></script> -->
 
-    <!--    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
-    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
-    <script src="/javascripts/lib/chart.js"></script>
-    
+
 </head>
 <body>
 <div class="public_contents_div">
@@ -205,7 +208,7 @@
                     <div class="vertical-double-box margin-t-40 margin-r-16">
                         <div class="upbit_whale_card">
                                 <div class="upbit_whale_card_content card_title font-14b background-font-color margin-a-8">UPBIT 실시간 고래 체결
-                                    <div class = "font-12n card_body_gray_color">last update : 2021-01-07 10:20 </div>
+                                    <div class = "font-12n card_body_gray_color" id = "whale_update_time">last update : </div>
                                 </div>
                                 
                                 <div class="card_title font-14b background-font-color margin-b-8"></div>

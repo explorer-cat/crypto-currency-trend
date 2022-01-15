@@ -50,9 +50,9 @@ exports.getNoticeInfo = async function(req,res,callback) {
 exports.getUpbitNewListCoin = async function(req,res,callback) {
   try {
 
-    conn.connect();
-    let [rows] = conn.query("SELECT * FROM coin-trend")
-    console.log(rows)
+    // conn.connect();
+    // let [rows] = conn.query("SELECT * FROM coin-trend")
+    // console.log(rows)
 
     let response = await axios.request({
       method: "GET",
