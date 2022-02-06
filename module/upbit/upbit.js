@@ -6,7 +6,7 @@ const cheerio = require("cheerio");
 const iconv = require('iconv-lite');
 const charset = require('charset');
 const sanitizeHtml = require('sanitize-html');
-const conn = require('../../database/databaseConnection')
+
 
 //업비트 모든 코인
 
@@ -38,6 +38,7 @@ exports.getUpbitMesuMedo = async function(req,res,callback) {
     console.error('getUpbit Error', e)
   }
 }
+
 
 exports.getNoticeInfo = async function(req,res,callback) {
     
