@@ -6,6 +6,10 @@ Toy Project
 
 API : UPBIT : https://api.upbit.com/v1
 
+
+<img
+  src="https://img.shields.io/badge/React-#61DAFB?style=flat-square&logo=React&logoColor=white"
+/>
 ![image](https://user-images.githubusercontent.com/55500077/147667176-11f31a58-a37d-4d9f-8e45-05c94ae7a158.png)
 
 
