@@ -69,6 +69,9 @@ exports.getBitcoinDominance = async function(req,res,callback) {
     res = res.replace("</span><span>마켓오픈</span>",")")
     res = res.replace("<span>","")
 
+    console.log("res", res)
+    page.close();
+    
     return callback(res)
   } catch(e) {
     console.error('getUpbit Error', e)
