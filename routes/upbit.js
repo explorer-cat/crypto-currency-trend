@@ -47,5 +47,19 @@ router.post('/getUpbitNewListCoin', async function(req, res, next) {
   }
 })
 
+router.get('/getBitcoinDominance', async function(req, res, next) {
+  try {
+      await Upbit.getBitcoinDominance(req, res, function (result) {
+        if(result) {
+          res.send(result);  
+        }
+      })
+  } catch (e) {
+    console.debug('[ROUTER] [index.js] ', e)
+    res.send(null);
+  }
+})
+
+
 
 module.exports = router;

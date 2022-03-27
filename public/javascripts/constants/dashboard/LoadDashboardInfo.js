@@ -27,6 +27,15 @@ window.onload = async function () {
 
     getUpbitNewListingCoin();
 
+    //도미넌스 파싱 20초마다 실행
+    getBTCdominance = setInterval(function() {
+        getBitcoinDominance();
+     }, 20000);
+
+
+    
+//    setTimeout("getBitcoinDominance()" , 3000)
+
     //업비트 일별 매수/매도 체결량 크롤링
 
 }
@@ -143,6 +152,32 @@ async function getUpbitMesuMedo() {
             console.log('this is getUpbitMesuMedo Response', response)
                 //받아온 크롤링 데이터를 HTML 에 표현하세요.
 
+        } else {
+            console.error('response data is null')
+        }
+    }catch (e){
+        console.error(' isOKAPI 사용 불가능한 api 정보=> ',e)
+        response={err: true}
+    }
+}
+
+
+
+async function getBitcoinDominance() {
+    try{
+        let response = await axios({
+            url: "/upbit/getBitcoinDominance",
+            method: 'GET',
+        })
+        let target = document.getElementById("BTC_dominance");
+        if(response) {
+            if(response.data.indexOf("+")) {
+                target.style.color = "red";
+                target.innerHTML = response.data + "%";
+            } else {
+                target.style.color = "blue";
+                target.innerHTML = response.data + "%";
+            }
         } else {
             console.error('response data is null')
         }

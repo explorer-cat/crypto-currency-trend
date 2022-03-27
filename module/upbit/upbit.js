@@ -6,6 +6,8 @@ const cheerio = require("cheerio");
 const iconv = require('iconv-lite');
 const charset = require('charset');
 const sanitizeHtml = require('sanitize-html');
+const puppeteer = require('puppeteer');
+
 
 
 //업비트 모든 코인
@@ -40,11 +42,39 @@ exports.getUpbitMesuMedo = async function(req,res,callback) {
 }
 
 
-exports.getNoticeInfo = async function(req,res,callback) {
-    
+
+
+exports.getBitcoinDominance = async function(req,res,callback) {
+  try {
+    const browser = await puppeteer.launch();
+
+    const page = await browser.newPage();
+
+    // 수집하고자 하는 URL을 입력
+    await page.goto('https://kr.tradingview.com/symbols/CRYPTOCAP-BTC.D/');
+
+    let content = await page.content();
+
+    const $ = cheerio.load(content, {decodeEntities: true});
+   // const res = sanitizeHtml()
+    // CSS선택자로 데이터를 수집
+    const selector = 'header .tv-category-header__content .quote-ticker-inited .tv-category-header__main-price .tv-category-header__main-price-content span:first-child'
+    let res = sanitizeHtml($(selector), {
+        parser: {
+          decodeEntities: true
+        }
+      });
+
+    res = res.replace("</span><span>","(")
+    res = res.replace("</span><span>마켓오픈</span>",")")
+    res = res.replace("<span>","")
+
+    return callback(res)
+  } catch(e) {
+    console.error('getUpbit Error', e)
+  }
 
 }
-
 
 
 /*업비트 크롤링*/
